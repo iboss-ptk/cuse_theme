@@ -15,7 +15,7 @@
  * remove or comment out: add_theme_support('jquery-cdn');
  * ======================================================================== */
 
-(function($) {
+ (function($) {
 
 // Use this variable to set up the common and page specific functions. If you 
 // rename this variable, you will also need to rename the namespace below.
@@ -25,14 +25,65 @@ var Roots = {
     init: function() {
       // JavaScript to be fired on all pages
       $(document).foundation(); // Initialize foundation JS for all pages
+      var wpadminh = $('#wpadminbar').css("height");
+      $('.wpam-debug').css({ height: wpadminh });
+      $(window).resize(function() {
+        var wpadminh = $('#wpadminbar').css("height");
+        $('.wpam-debug').css({ height: wpadminh });
+      });
     }
   },
+
   // Home page
   home: {
     init: function() {
       // JavaScript to be fired on the home page
+      // height equal viewport
+      function meet_viewport_height(element) {
+        var vp_height = $(window).height();
+        $(element).css({ height: vp_height });
+      }
+
+      $(document).ready(function(){
+        meet_viewport_height('#header');
+        meet_viewport_height('#header-overlay');
+        $('#header-overlay').css({ opacity: 0.5 });
+      });
+
+      $(window).resize(function() {
+        meet_viewport_height('#header');
+        meet_viewport_height('#header-overlay');
+      });
+
+      $(window).scroll(function(){
+        // navbar trasition
+        var scroll = $(window).scrollTop();
+        // var scroll_bound = 500;
+
+        // if (scroll > scroll_bound ) {
+        //   $('nav').addClass('scrolled');
+        // }
+
+        // if (scroll <= scroll_bound ) {
+        //   $('nav').removeClass('scrolled');
+        // }
+
+        // parallax section
+        var $bgobj = $('header[data-type="background"]')
+        var yPos = -($(window).scrollTop() / $bgobj.data('speed'));
+        var coords = '50% '+ yPos + 'px';
+        $bgobj.css({ backgroundPosition: coords });
+
+        // header overlay
+        var $overlay = $('.overlay');
+        var header_height = $(window).height();
+        var transparency = 0.5+(scroll/(3*header_height));
+        console.log(transparency);
+        $overlay.css({ opacity: transparency });
+      });
     }
   },
+
   // About us page, note the change from about-us to about_us.
   about_us: {
     init: function() {

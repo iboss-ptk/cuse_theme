@@ -1,4 +1,5 @@
 <div class="contain-to-grid fixed">
+  <?php if ( is_admin_bar_showing() ) echo '<div class="wpam-debug"></div>'; ?>
   <header>
     <nav class="top-bar" data-topbar>
       <ul class="title-area">

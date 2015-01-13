@@ -1,27 +1,5 @@
 .banner { }
 
-.top-bar {
-	transition: background 1s ease;
-	background: rgb(0, 0, 0); /* fall back */
-	background: rgba(0, 0, 0, 0);
-	transition: all 0.5s ease;
-}
-
-.top-bar a {
-    color: white;
-    text-decoration: none;
-    transition: color .3s ease;
-}
-
-.top-bar a:hover {
-    color: #20D0D0;
-    text-decoration: none;
-}
-
-.top-bar:hover {
-	background: rgba(0, 0, 0, .9);
-}
-
-.top-bar div {
-	background: rgba(0, 0, 0, .9);
+.top-bar, .top-bar-section, .title-area {
+	background: rgba(0, 0, 0, 0);	
 }

@@ -18,16 +18,16 @@
   do_action('get_header');
   get_template_part('templates/header');
 ?>
+<?php if ( is_admin_bar_showing() ) echo '<div style="min-height: 28px;"></div>'; ?>
 
 
 
-
-  <div class="content row" role="document">
-    <main class="main <?php echo roots_main_class(); ?> columns" role="main">
+  <div class="content" role="document">
+    <main class="main <?php echo roots_main_class(); ?>" role="main">
       <?php include roots_template_path(); ?>
     </main><!-- /.main -->
     <?php if (roots_display_sidebar()) : ?>
-      <aside class="sidebar <?php echo roots_sidebar_class(); ?> columns" role="complementary">
+      <aside class="sidebar <?php echo roots_sidebar_class(); ?>" role="complementary">
         <?php include roots_sidebar_path(); ?>
       </aside><!-- /.sidebar -->
     <?php endif; ?>
