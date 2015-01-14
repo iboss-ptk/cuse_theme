@@ -5,7 +5,15 @@
 		<p>C H U L A L O N G K O R N&nbsp&nbspU N I V E R S I T Y</p>
 	</div>
 </header>
+
+<div>
+	<div class="small-12 large-4 columns no-pad"><img src="http://portfoliotheme.org/invent/wp-content/uploads/2014/06/14222217954_f201ebd246_b-e1401946662704.jpg"></div>
+	<div class="small-12 large-4 columns no-pad"><img src="http://portfoliotheme.org/invent/wp-content/uploads/2014/06/14906416037_cd3c0a4a72_k-2.jpg"></div>
+	<div class="small-12 large-4 columns no-pad"><img src="http://portfoliotheme.org/invent/wp-content/uploads/2014/06/11259929275_3c3338971e_b-e1401946800279.jpg"></div>
+</div>
+
 <section id="content" data-type="background" data-speed="10">
+<h1>&nbsp</h1>
 	<h1 id="one">One</h1>
 	<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas luctus non urna a malesuada. In ac lorem vel nisi imperdiet cursus. Curabitur facilisis rutrum tortor, id rutrum lacus facilisis et. Phasellus non ipsum lobortis, tempor elit a, hendrerit nulla. Aenean semper facilisis augue id porttitor. Sed accumsan nibh a diam molestie, eu egestas mauris venenatis. Duis scelerisque luctus enim et gravida. Nam quis turpis non purus interdum luctus. Etiam gravida adipiscing venenatis.</p>
 	<p>Duis non est massa. Integer placerat dictum magna et dapibus. Proin laoreet, neque eu tempus aliquam, eros orci consequat ante, in consectetur ligula magna vel justo. Nulla eu quam egestas, vehicula mi a, auctor dui. Maecenas nec sem sit amet velit interdum ullamcorper at non diam. Vestibulum lectus orci, tempor eu scelerisque vitae, vulputate id tortor. Cras lacus dui, aliquet at tempus pharetra, ultrices ac eros. Integer a placerat quam, sed ornare tellus. In eu placerat massa. Phasellus accumsan faucibus leo, sed egestas eros accumsan ac. Praesent adipiscing, nulla et ullamcorper suscipit, lectus magna rhoncus augue, at sodales eros lectus eu risus. Nam vulputate sem ac faucibus venenatis. Aenean semper felis sed convallis cursus. Proin commodo magna gravida dolor egestas, vitae congue dolor vestibulum. Nulla eros purus, consectetur eu sollicitudin eget, porttitor eu tortor.</p>

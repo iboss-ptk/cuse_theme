@@ -30,6 +30,9 @@ function roots_scripts() {
     wp_register_script('angularjs', 'https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.3.8/angular.min.js', array(), null, true);
     wp_enqueue_script('angularjs');
   }
+
+  // angular app
+  // if( is_page('page-name')) wp_enqueue_script('whatever', get_template_directory_uri() . '/assets/js/app_name.js', false);
   
 
   wp_register_script('roots_scripts', get_template_directory_uri() . '/assets/js/scripts.min.js', array(), '0fc6af96786d8f267c8686338a34cd38', true);

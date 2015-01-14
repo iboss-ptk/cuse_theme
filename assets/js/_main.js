@@ -40,7 +40,7 @@ var Roots = {
       // JavaScript to be fired on the home page
       // height equal viewport
       function meet_viewport_height(element) {
-        var vp_height = $(window).height();
+        var vp_height = $(window).height()*1.15;
         $(element).css({ height: vp_height });
       }
 
@@ -78,7 +78,6 @@ var Roots = {
         var $overlay = $('.overlay');
         var header_height = $(window).height();
         var transparency = 0.5+(scroll/(3*header_height));
-        console.log(transparency);
         $overlay.css({ opacity: transparency });
       });
     }
