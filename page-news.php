@@ -15,10 +15,11 @@
       <?php the_date(); ?>
    </header>
   <?php the_content(); ?>
-
+  
 <?php endwhile; ?>
 <?php echo get_next_posts_link( 'Older Entries', $wp_query->max_num_pages ); ?>
 <?php echo get_previous_posts_link( 'Newer Entries' ); ?>
+
   <?php 
 	// clean up after our query
 	wp_reset_postdata(); 
