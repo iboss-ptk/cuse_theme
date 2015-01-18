@@ -31,6 +31,77 @@
   opacity: 0;
 }
 
+.section-title {
+  color: white;
+  line-height: 80px;
+  font-size: 1.3em;
+  background-color: #333;
+}
+
+.section-title-pad {
+  @media #{$small-up} { 
+    padding-left: 8.33vw;
+  }
+
+  @media #{$large-up} {
+    padding-left: 2.78vw;
+  }
+}
+
+.instagram {
+  img {
+    transition: all .3s ease-in-out;
+    &:hover {
+        -webkit-filter: blur(2px);
+    }
+  }
+}
+
+.section-title-news {
+  // background-color: #019875;
+}
+
+.section-title-instragram {
+  // background-color: #446CB3;
+}
+
+.section-title-event {
+  // background-color: #DB0A5B;
+}
+
+.post-card {
+  background-color: #F2F1EF;
+  color: #22313F;
+
+  h2 {
+    color: #22313F;
+  }
+}
+
+.post-card-cover {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  min-width: 100%;
+  border: 0px solid transparent;
+  border: 0px solid rgba(0,0,0,0);
+  background-color: rgba(162, 222, 208, 0);
+  transition: all .5s ease-in-out;
+
+  &:hover {
+    border-style: solid;
+    border-width: 0px;
+    border-color: #87D37C;
+    background-color: rgba(162, 222, 208, .2);
+  } 
+}
+
+.post-card-content {
+  padding-top: 20px;
+  padding-bottom: 20px;
+  min-height: 100%;
+}
+
 /* class for after scroll */
 
 // .scrolled {

@@ -1,3 +1,11 @@
+// variables
+
+// mixins
+
+
+// global styles
+
+// no padding
 .no-pad {
 	padding: 0 0 0 0;
 }
@@ -5,6 +13,23 @@
 .no-pad-right {
 	padding-right: 0;
 }
-.no-pad-left{
+.no-pad-left {
 	padding-left: 0;
+}
+
+// contact the edges
+.contact-top {
+	top: 0;
+}
+
+.contact-bottom {
+	bottom: 0;
+}
+
+.contact-left {
+	left: 0;
+}
+
+.contact-right {
+	right: 0;
 }

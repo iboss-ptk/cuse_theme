@@ -6,13 +6,60 @@
 	</div>
 </header>
 
-<div>
-	<div class="small-12 large-4 columns no-pad"><img src="http://portfoliotheme.org/invent/wp-content/uploads/2014/06/14222217954_f201ebd246_b-e1401946662704.jpg"></div>
-	<div class="small-12 large-4 columns no-pad"><img src="http://portfoliotheme.org/invent/wp-content/uploads/2014/06/14906416037_cd3c0a4a72_k-2.jpg"></div>
-	<div class="small-12 large-4 columns no-pad"><img src="http://portfoliotheme.org/invent/wp-content/uploads/2014/06/11259929275_3c3338971e_b-e1401946800279.jpg"></div>
+
+<section id="news">
+	<div class="small-12 no-pad section-title section-title-news">
+		<span class="section-title-pad">News</span>
+	</div>
+
+	<div class="rows" data-equalizer>
+	<!-- wp news loop -->
+	<div class="post-card small-12 large-4 columns no-pad" data-equalizer-watch>
+		<div class='post-card-cover'></div>
+		<div class="no-pad"><img src="http://portfoliotheme.org/invent/wp-content/uploads/2014/06/14222217954_f201ebd246_b-e1401946662704.jpg"></div>
+		<div class="post-card-content small-offset-1 small-10">
+			<h2>Curabitur facilisis rutrum tortor</h2>
+			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas luctus non urna a malesuada. In ac lorem vel nisi imperdiet cursus. Curabitur facilisis rutrum tortor, id rutrum lacus facilisis et. Phasellus non ipsum lobortis, tempor elit a, hendrerit nulla. Aenean semper facilisis augue id porttitor. Sed accumsan nibh a diam molestie, eu egestas mauris venenatis. Duis scelerisque luctus enim et gravida. Nam quis turpis non purus interdum luctus. Etiam gravida adipiscing venenatis.</p>
+		</div>
+	</div>
+	<!-- end loop -->
+
+	<div class="post-card small-12 large-4 columns no-pad" data-equalizer-watch>
+		<div class='post-card-cover'></div>
+		<div class="no-pad"><img src="http://portfoliotheme.org/invent/wp-content/uploads/2014/06/14906416037_cd3c0a4a72_k-2.jpg"></div>
+		<div class="post-card-content small-offset-1 small-10">
+			<h2>Duis scelerisque luctus enim et gravida</h2>
+			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas luctus non urna a malesuada. In ac lorem vel nisi imperdiet cursus. Curabitur facilisis rutrum tortor, id rutrum lacus facilisis et. Phasellus non ipsum lobortis, tempor elit a, hendrerit nulla. Aenean semper facilisis augue id porttitor. Sed accumsan nibh a diam molestie, eu egestas mauris venenatis. Duis scelerisque luctus enim et gravida. Nam quis turpis non purus interdum luctus. Etiam gravida adipiscing venenatis.</p>
+		</div>
+	</div>
+	<div class="post-card small-12 large-4 columns no-pad" data-equalizer-watch>
+		<div class='post-card-cover'></div>
+		<div class="no-pad"><img src="http://portfoliotheme.org/invent/wp-content/uploads/2014/06/11259929275_3c3338971e_b-e1401946800279.jpg"></div>
+		<div class="post-card-content small-offset-1 small-10">
+			<h2>Nam quis turpis non purus interdum luctus</h2>
+			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas luctus non urna a malesuada. In ac lorem vel nisi imperdiet cursus. Curabitur facilisis rutrum tortor, id rutrum lacus facilisis et. Phasellus non ipsum lobortis, tempor elit a, hendrerit nulla. Aenean semper facilisis augue id porttitor. Sed accumsan nibh a diam molestie, eu egestas mauris venenatis. Duis scelerisque luctus enim et gravida. Nam quis turpis non purus interdum luctus. Etiam gravida adipiscing venenatis.</p>
+		</div>
+	</div>
+</div> <!-- end of rows -->
+</section>
+
+
+<div class="rows" data-equalizer>
+<section id="instragram" class="small-12 large-4 columns no-pad" data-equalizer-watch>
+	<div class="no-pad section-title section-title-instragram">
+		<span class="section-title-pad">Instragram</span>
+	</div>
+	<div class="instagram"></div>
+</section>
+
+<section id="event" class="small-12 large-8 columns no-pad" data-equalizer-watch>
+	<div class="no-pad section-title section-title-event">
+		<span class="section-title-pad">Event</span>
+	</div>
+</section>
 </div>
 
-<section id="content" data-type="background" data-speed="10">
+<!-- section id="content">
 <h1>&nbsp</h1>
 	<h1 id="one">One</h1>
 	<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas luctus non urna a malesuada. In ac lorem vel nisi imperdiet cursus. Curabitur facilisis rutrum tortor, id rutrum lacus facilisis et. Phasellus non ipsum lobortis, tempor elit a, hendrerit nulla. Aenean semper facilisis augue id porttitor. Sed accumsan nibh a diam molestie, eu egestas mauris venenatis. Duis scelerisque luctus enim et gravida. Nam quis turpis non purus interdum luctus. Etiam gravida adipiscing venenatis.</p>
@@ -24,4 +71,4 @@
 
 	<h1 id="three">Three</h1>
 	<p>In dapibus porta volutpat. Donec lobortis arcu et commodo sollicitudin. Sed non condimentum magna. Cras sit amet adipiscing magna. Sed volutpat nisl sed lectus dignissim vehicula. Proin molestie et quam eu porttitor. Etiam interdum, nisl sed venenatis consequat, turpis augue dignissim purus, eget rutrum est nisi sit amet velit. Praesent interdum congue neque, ac molestie mauris auctor rutrum. Nunc nibh ante, ultricies ut ornare quis, faucibus eget nunc.</p>
-</section>
+</section> -->

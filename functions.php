@@ -25,6 +25,9 @@ $roots_includes = array(
   'lib/extras.php',          // Custom functions
 );
 
+// disable admin bar
+add_filter('show_admin_bar', '__return_false');
+
 foreach ($roots_includes as $file) {
   if (!$filepath = locate_template($file)) {
     trigger_error(sprintf(__('Error locating %s for inclusion', 'roots'), $file), E_USER_ERROR);

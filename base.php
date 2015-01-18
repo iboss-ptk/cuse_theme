@@ -18,9 +18,6 @@
   do_action('get_header');
   get_template_part('templates/header');
 ?>
-<?php if ( is_admin_bar_showing() ) echo '<div style="min-height: 28px;"></div>'; ?>
-
-
 
   <div class="content" role="document">
     <main class="main <?php echo roots_main_class(); ?>" role="main">
