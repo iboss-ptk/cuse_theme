@@ -1,36 +1,28 @@
 <?php
-/*
-Template Name: News Template
-*/?>
 
-<div id="main-content" class="main-content">
+	$paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
+	$args = array(
+	"posts_per_page" =>1,
+	"post_type" => "news",
+	'paged'=>$paged);
+	$wp_query = new WP_Query($args);?>
+    
+  <?php if ( $wp_query->have_posts() ) : ?>
+  <?php while ( $wp_query->have_posts() ) : $wp_query->the_post(); // Start the Loop.?>
 
-	<div id="primary" class="content-area">
-		<div id="content" class="site-content" role="main">
+  <header>
+      <h1 class="entry-title"><?php the_title(); ?></h1>
+      <?php the_date(); ?>
+   </header>
+  <?php the_content(); ?>
 
-			<?php
-				$args = array(
-						"posts_per_page" =>3,
-						"post_type" => "news"
-						);
-				$wp_query = new WP_Query($args);
-				// Start the Loop.
-				while ( $wp_query->have_posts() ) : $wp_query->the_post();
-
-					// Include the page content template.
-					the_content();
-					$date = DateTime::createFromFormat('Ymd',get_field('post_date'));
-					echo $date->format('d/m/Y');
-					the_field('description');
-					//echo get_field('post_date');
-					// If comments are open or we have at least one comment, load up the comment template.
-					if ( comments_open() || get_comments_number() ) {
-						comments_template();
-					}
-				endwhile;
-			?>
-
-		</div><!-- #content -->
-	</div><!-- #primary -->
-</div><!-- #main-content -->
-	
+<?php endwhile; ?>
+<?php echo get_next_posts_link( 'Older Entries', $wp_query->max_num_pages ); ?>
+<?php echo get_previous_posts_link( 'Newer Entries' ); ?>
+  <?php 
+	// clean up after our query
+	wp_reset_postdata(); 
+  ?>
+<?php else:  ?>
+<p><?php _e( 'Sorry, no posts matched your criteria.' ); ?></p>
+<?php endif; ?>
