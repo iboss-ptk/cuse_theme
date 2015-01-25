@@ -24,13 +24,21 @@ var Roots = {
   common: {
     init: function() {
       // JavaScript to be fired on all pages
-      $(document).foundation(); // Initialize foundation JS for all pages
+      $(document).foundation({
+        topbar : {
+            custom_back_text: true,
+            back_text: "<i class='fi-arrow-left'></i> BACK"
+          }
+      }); // Initialize foundation JS for all pages
       var wpadminh = $('#wpadminbar').css("height");
       $('.wpam-debug').css({ height: wpadminh });
       $(window).resize(function() {
         var wpadminh = $('#wpadminbar').css("height");
         $('.wpam-debug').css({ height: wpadminh });
       });
+
+      // hide nav on scroll down
+
     }
   },
 
@@ -39,6 +47,10 @@ var Roots = {
     init: function() {
       // JavaScript to be fired on the home page
       // height equal viewport
+
+      if ( $(".img-container img").css("height") < $(".img-container img").css("width") ) {
+          $(".img-container").addClass("fit-horizontal");
+      } else $(".img-container").addClass("fit-vertical");
 
       // this section is only for test purpose
       // ===== BEGIN =====

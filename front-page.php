@@ -6,37 +6,39 @@
 	</div>
 </header>
 
-
 <section id="news">
+
 	<div class="small-12 no-pad section-title section-title-news">
 		<span class="section-title-pad">News</span>
-	</div>
+	</div>	
 
-	<div class="rows" data-equalizer>
+	<div class="rows card-group" data-equalizer>
 	<!-- wp news loop -->
 	<div class="post-card small-12 large-4 columns no-pad" data-equalizer-watch>
 		<div class='post-card-cover'></div>
-		<div class="no-pad"><img src="http://portfoliotheme.org/invent/wp-content/uploads/2014/06/14222217954_f201ebd246_b-e1401946662704.jpg"></div>
-		<div class="post-card-content small-offset-1 small-10">
-			<h2>Curabitur facilisis rutrum tortor</h2>
-			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas luctus non urna a malesuada. In ac lorem vel nisi imperdiet cursus. Curabitur facilisis rutrum tortor, id rutrum lacus facilisis et. Phasellus non ipsum lobortis, tempor elit a, hendrerit nulla. Aenean semper facilisis augue id porttitor. Sed accumsan nibh a diam molestie, eu egestas mauris venenatis. Duis scelerisque luctus enim et gravida. Nam quis turpis non purus interdum luctus. Etiam gravida adipiscing venenatis.</p>
+		<div class="seperate">
+			<div class="no-pad img-container"><img src="https://fbcdn-sphotos-e-a.akamaihd.net/hphotos-ak-xpa1/t31.0-8/10838087_905924192781735_1051433154773444473_o.jpg"></div>
+			<div class="post-card-content small-offset-1 small-10">
+				<h4>Curabitur facilisis rutrum tortor</h4>
+				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas luctus non urna a malesuada. In ac lorem vel nisi imperdiet cursus. Curabitur facilisis rutrum tortor, id rutrum lacus facilisis et. Phasellus non ipsum lobortis, tempor elit a, hendrerit nulla. Aenean semper facilisis augue id porttitor. Sed accumsan nibh a diam molestie, eu egestas mauris venenatis. Duis scelerisque luctus enim et gravida. Nam quis turpis non purus interdum luctus. Etiam gravida adipiscing venenatis.</p>
+			</div>
 		</div>
 	</div>
 	<!-- end loop -->
 
 	<div class="post-card small-12 large-4 columns no-pad" data-equalizer-watch>
 		<div class='post-card-cover'></div>
-		<div class="no-pad"><img src="http://portfoliotheme.org/invent/wp-content/uploads/2014/06/14906416037_cd3c0a4a72_k-2.jpg"></div>
+		<div class="no-pad img-container"><img src="http://portfoliotheme.org/invent/wp-content/uploads/2014/06/14906416037_cd3c0a4a72_k-2.jpg"></div>
 		<div class="post-card-content small-offset-1 small-10">
-			<h2>Duis scelerisque luctus enim et gravida</h2>
+			<h4>Duis scelerisque luctus enim et gravida</h4>
 			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas luctus non urna a malesuada. In ac lorem vel nisi imperdiet cursus. Curabitur facilisis rutrum tortor, id rutrum lacus facilisis et. Phasellus non ipsum lobortis, tempor elit a, hendrerit nulla. Aenean semper facilisis augue id porttitor. Sed accumsan nibh a diam molestie, eu egestas mauris venenatis. Duis scelerisque luctus enim et gravida. Nam quis turpis non purus interdum luctus. Etiam gravida adipiscing venenatis.</p>
 		</div>
 	</div>
 	<div class="post-card small-12 large-4 columns no-pad" data-equalizer-watch>
 		<div class='post-card-cover'></div>
-		<div class="no-pad"><img src="http://portfoliotheme.org/invent/wp-content/uploads/2014/06/11259929275_3c3338971e_b-e1401946800279.jpg"></div>
+		<div class="no-pad img-container"><img src="http://portfoliotheme.org/invent/wp-content/uploads/2014/06/11259929275_3c3338971e_b-e1401946800279.jpg"></div>
 		<div class="post-card-content small-offset-1 small-10">
-			<h2>Nam quis turpis non purus interdum luctus</h2>
+			<h4>Nam quis turpis non purus interdum luctus</h4>
 			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas luctus non urna a malesuada. In ac lorem vel nisi imperdiet cursus. Curabitur facilisis rutrum tortor, id rutrum lacus facilisis et. Phasellus non ipsum lobortis, tempor elit a, hendrerit nulla. Aenean semper facilisis augue id porttitor. Sed accumsan nibh a diam molestie, eu egestas mauris venenatis. Duis scelerisque luctus enim et gravida. Nam quis turpis non purus interdum luctus. Etiam gravida adipiscing venenatis.</p>
 		</div>
 	</div>
@@ -47,7 +49,7 @@
 <div class="rows" data-equalizer>
 <section id="instragram" class="small-12 large-4 columns no-pad" data-equalizer-watch>
 	<div class="no-pad section-title section-title-instragram">
-		<span class="section-title-pad">Instragram</span>
+		<span class="section-title-pad">#CUSE on Instragram</span>
 	</div>
 	<div class="instagram"></div>
 </section>
@@ -59,7 +61,7 @@
 </section>
 </div>
 
-<!-- section id="content">
+<!-- <section id="content">
 <h1>&nbsp</h1>
 	<h1 id="one">One</h1>
 	<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas luctus non urna a malesuada. In ac lorem vel nisi imperdiet cursus. Curabitur facilisis rutrum tortor, id rutrum lacus facilisis et. Phasellus non ipsum lobortis, tempor elit a, hendrerit nulla. Aenean semper facilisis augue id porttitor. Sed accumsan nibh a diam molestie, eu egestas mauris venenatis. Duis scelerisque luctus enim et gravida. Nam quis turpis non purus interdum luctus. Etiam gravida adipiscing venenatis.</p>

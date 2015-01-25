@@ -2,9 +2,21 @@
 
 // mixins
 
+// =============================================================================
+// SVendor prefix
+// =============================================================================
+@mixin vendor-prefix($name, $argument) {
+  -webkit-#{$name}: #{$argument};
+  -ms-#{$name}: #{$argument};
+  -moz-#{$name}: #{$argument};
+  -o-#{$name}: #{$argument};
+  #{$name}: #{$argument};
+}
 
 // global styles
-
+body {
+	background-color: #BFBFBF;
+}
 // no padding
 .no-pad {
 	padding: 0 0 0 0;
