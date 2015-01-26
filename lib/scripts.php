@@ -36,6 +36,8 @@ function roots_scripts() {
   if( is_page('news') ) wp_enqueue_script('news');
   
 
+  // another js file
+
   wp_register_script('roots_scripts', get_template_directory_uri() . '/assets/js/scripts.min.js', array(), '0fc6af96786d8f267c8686338a34cd38', true);
   wp_enqueue_script('roots_scripts');
 }

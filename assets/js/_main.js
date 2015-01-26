@@ -50,7 +50,9 @@ var Roots = {
 
       if ( $(".img-container img").css("height") < $(".img-container img").css("width") ) {
           $(".img-container").addClass("fit-horizontal");
-      } else $(".img-container").addClass("fit-vertical");
+      } else {
+        $(".img-container").addClass("fit-vertical");
+      }
 
       // this section is only for test purpose
       // ===== BEGIN =====
@@ -132,6 +134,7 @@ var Roots = {
   about_us: {
     init: function() {
       // JavaScript to be fired on the about us page
+      console.log('x');
     }
   }
 };

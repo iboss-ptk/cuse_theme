@@ -14,7 +14,7 @@
       <h1 class="entry-title"><?php the_title(); ?></h1>
       <?php the_date(); ?>
    </header>
-  <?php the_content(); ?>
+  <?php the_excerpt(); ?>
   
 <?php endwhile; ?>
 <?php echo get_next_posts_link( 'Older Entries', $wp_query->max_num_pages ); ?>
@@ -28,7 +28,7 @@
 <p><?php _e( 'Sorry, no posts matched your criteria.' ); ?></p>
 <?php endif; ?>
 
-<div ng-app="application" ng-controller="storeController">
+<!-- <div ng-app="application" ng-controller="storeController">
   <input ng-model="a" type='text'>
   <div>{{a}}</div>
-</div>
+</div> -->
