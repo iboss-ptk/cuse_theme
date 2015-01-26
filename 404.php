@@ -1,3 +1,5 @@
+<div class="page-content">
+	<div class="large-offset-2 large-8 small-offset-1 small-10">
 <?php get_template_part('templates/page', 'header'); ?>
 
 <div data-alert class="alert-box warning">
@@ -10,4 +12,7 @@
   <li><?php _e('an out-of-date link', 'roots'); ?></li>
 </ul>
 
+
 <?php get_search_form(); ?>
+
+</div>

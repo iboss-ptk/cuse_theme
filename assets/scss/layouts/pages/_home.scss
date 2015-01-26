@@ -34,16 +34,34 @@
 .section-title {
   color: white;
   line-height: 70px;
+  min-width: 100%;
   font-size: 1.3em;
   background-color: #333;
   @include vendor-prefix(box-sizing, border-box);
   border-bottom: 3px solid;
+  position: relative;
+  overflow: hidden; 
+}
 
+.more-button {
+  font-weight: 300;
+  outline: 1px solid white;
+  max-width: 100%;
+  max-height: 20px;
+  padding: 3px 8px 3px 8px;
+  // position: relative;
+  text-align: right;
+  @media #{$small-up} { 
+    margin-right: 8.33vw;
+  }
+  @media #{$large-up} {
+    margin-right: 2.78vw;
+  }
+  background-color: transparent;
   &:after {
     content: " ";
-    min-width: 100%;
-    height: 10px;
-    background-color: #000;
+    visibility: hidden;
+    clear: both;
   }
 }
 
@@ -114,30 +132,30 @@
   }
 }
 
-
-// .post-card-cover {
-//   position: absolute;
-//   top: 0;
-//   bottom: 0;
-//   min-width: 100%;
-//   border: 0px solid transparent;
-//   border: 0px solid rgba(0,0,0,0);
-//   background-color: rgba(162, 222, 208, 0);
-//   transition: all .5s ease-in-out;
-
-//   &:hover {
-//     border-style: solid;
-//     border-width: 0px;
-//     border-color: #87D37C;
-//     background-color: rgba(162, 222, 208, .2);
-//   } 
-// }
-
 .post-card-content {
   padding-top: 20px;
   padding-bottom: 20px;
   min-height: 100%;
   margin: 10px 10px 10px 10px;
+}
+
+.relative-wrapper {
+  @media #{$small-up} { 
+    min-height: 300px;
+  }
+  @media #{$large-up} {
+    min-height: 700px;
+  }
+  position: relative;
+}
+
+.no-event {
+  color: #6C7A89;
+  width: 100%;
+  margin: 0 auto;
+  position: absolute;
+  top: 50%;
+  clear: both;
 }
 
 /* class for after scroll */

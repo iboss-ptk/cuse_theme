@@ -8,8 +8,9 @@
 
 <section id="news">
 
-	<div class="small-12 no-pad section-title section-title-news">
-		<span class="section-title-pad">News</span>
+	<div class="small-12 no-pad section-title section-title-news rows">
+		<span class="section-title-pad small-1 columns">News</span>
+		<!-- <div class="small-offset-2 small-1 columns"><span class="more-button">more</span></div> -->
 	</div>	
 
 	<div class="rows card-group" data-equalizer>
@@ -57,6 +58,11 @@
 <section id="event" class="small-12 large-8 columns no-pad" data-equalizer-watch>
 	<div class="no-pad section-title section-title-event">
 		<span class="section-title-pad">Event</span>
+	</div>
+	<div class="relative-wrapper">
+	<div class="no-event text-center">
+		No event available.
+	</div>
 	</div>
 </section>
 </div>

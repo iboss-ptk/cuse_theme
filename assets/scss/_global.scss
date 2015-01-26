@@ -45,3 +45,18 @@ body {
 .contact-right {
 	right: 0;
 }
+
+.page-content {
+	background-color: #EEEEEE;
+	margin-top: -10px;
+	margin-bottom: -10px;
+	@media #{$small-up} {
+		padding-top: 70px;
+		padding-bottom: 70px;
+	}
+	@media #{$large-up} {
+		padding-top: 140px;
+		padding-bottom: 140px;
+	}
+	
+}
