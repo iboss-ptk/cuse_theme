@@ -25,6 +25,8 @@ function roots_scripts() {
 
   wp_enqueue_script('jquery');
 
+  wp_register_script('masonry', get_template_directory_uri() . 'bower_components/masonry/dist/masonry.pkgd.min.js 
+', array(). false, false);
   // determine which page to use angularjs
   if ( is_page( array( 'news' ) ) ) {
     wp_register_script('angularjs', 'https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.3.8/angular.min.js', array(), null, true);
@@ -33,7 +35,10 @@ function roots_scripts() {
 
   // angular app
   wp_register_script('news', get_template_directory_uri() . '/assets/js/news.js', array(), null, true);
-  if( is_page('news') ) wp_enqueue_script('news');
+  if( is_page('news') ) {
+    wp_enqueue_script('masonry');
+    wp_enqueue_script('news');
+  }
   
 
   // another js file

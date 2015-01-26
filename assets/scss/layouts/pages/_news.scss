@@ -1,0 +1,17 @@
+.item { width:31%; color: white; background-color: black;    -moz-box-sizing: border-box;
+         box-sizing: border-box;}
+.item .w2 { width: 50%; }
+
+.wrap-con {
+	min-width: 100%;
+}
+
+#container {
+	position: relative;
+	margin: 0 auto;
+	width: 80%;
+}
+
+.gutter-sizer {
+	width: 3%;
+}

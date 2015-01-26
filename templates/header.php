@@ -16,4 +16,4 @@
   </header>
 </div> <!-- contain-to-grid -->
 
-<div class="top-offset"></div>
+<!-- <div class="top-offset"></div> -->
