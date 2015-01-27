@@ -12,9 +12,11 @@
   <?php while ( $wp_query->have_posts() ) : $wp_query->the_post(); // Start the Loop.?>
 
   <header>
-      <h1 class="entry-title"><?php the_title(); ?></h1>
+      <h1 class="entry-title"><?php //the_title(); 
+      ?></h1>
    </header>
-      <?php the_content(); ?>
+      <?//php the_content(); 
+      ?>
   
 <?php endwhile; ?>
 <?php 

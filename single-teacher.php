@@ -5,12 +5,14 @@
     </header>
     <div class="entry-content">
       <?php the_field('image'); ?>
-      <?php the_field('name'); ?>
+      <?php the_field('name_thai'); ?>
+      <?php the_field('name_eng'); ?>
       <?php the_field('education'); ?>
-      <?php the_field('research'); ?>
+      <?php the_field('interests'); ?>
       <?php the_field('contact'); ?>
       <?php the_field('subject'); ?>
-      <?php the_field('research_topic'); ?>
+      <?php the_field('journal_articles'); ?>
+      <?php the_field('conferences/workshops'); ?>
     </div>
     <footer>
       <?php wp_link_pages(array('before' => '<nav class="page-nav"><p>' . __('Pages:', 'roots'), 'after' => '</p></nav>')); ?>

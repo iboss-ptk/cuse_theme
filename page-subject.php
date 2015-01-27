@@ -2,7 +2,7 @@
 
 	//$paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
 	$args = array(
-	//"posts_per_page" =>1,
+	"posts_per_page" =>30,
 	"post_type" => "subject",
 	//'paged'=>$paged
   );
@@ -14,8 +14,14 @@
   <header>
       <h1 class="entry-title"><?php the_title(); ?></h1>
    </header>
-      <?php the_content(); ?>
-  
+
+      <?php the_field('subject_code'); ?>
+      <?php the_field('credits'); ?>
+      <?php the_field('subject_name_thai'); ?>
+      <?php the_field('subject_name_eng'); ?>
+      <?php the_field('subject_description_thai'); ?>
+      <?php the_field('subject_description_eng'); ?>
+      <?php echo get_the_term_list( $post->ID, 'types', '<li>', ',</li><li>', '</li>' );?>
 <?php endwhile; ?>
 <?php 
       //echo get_next_posts_link( 'Older Entries', $wp_query->max_num_pages ); 

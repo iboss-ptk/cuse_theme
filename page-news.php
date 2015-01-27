@@ -13,6 +13,9 @@
   <header>
       <h1 class="entry-title"><?php the_title(); ?></h1>
       <?php the_date(); ?>
+      <?php if ( has_post_thumbnail() ) {
+            the_post_thumbnail();}            
+            ?>
    </header>
   <?php the_excerpt(); ?>
   
