@@ -26,7 +26,7 @@ function roots_scripts() {
   wp_enqueue_script('jquery');
 
   wp_register_script('masonry', get_template_directory_uri() . 'bower_components/masonry/dist/masonry.pkgd.min.js 
-', array(). false, false);
+', array(), false, false);
   // determine which page to use angularjs
   if ( is_page( array( 'news' ) ) ) {
     wp_register_script('angularjs', 'https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.3.8/angular.min.js', array(), null, true);

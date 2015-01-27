@@ -96,49 +96,6 @@
   }
 }
 
-.img-container {
-  height: 264px;
-  // display: inline-block; /* shrink to fit */
-  width: 100%;           /* whatever width you like */
-  position: relative;    /* so .content can use position: absolute */
-  overflow: hidden;
-
-  img {
-    // position: absolute;
-    height: 700px;
-
-    width: 900px;
-    margin: 0 auto;
-  }
-}
-
-
-.post-card {
-  background-color: #F2F1EF;
-  color: #22313F;
-  transition: all .3s ease-in-out;
-
-  img {
-    max-width: 100%;
-    max-height: 100%;
-    margin: 0 auto;
-    overflow: hidden;
-  }
-
-  &:hover {
-    background-color: #DADFE1;
-    // background-color: #E4F1FE;
-
-  }
-}
-
-.post-card-content {
-  padding-top: 20px;
-  padding-bottom: 20px;
-  min-height: 100%;
-  margin: 10px 10px 10px 10px;
-}
-
 .relative-wrapper {
   @media #{$small-up} { 
     min-height: 300px;
