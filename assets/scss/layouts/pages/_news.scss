@@ -1,17 +1,21 @@
-.item { width:31%; color: white; background-color: black;    -moz-box-sizing: border-box;
-         box-sizing: border-box;}
-.item .w2 { width: 50%; }
-
-.wrap-con {
-	min-width: 100%;
+* {
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
 }
 
-#container {
-	position: relative;
-	margin: 0 auto;
-	width: 80%;
+body { font-family: sans-serif; }
+
+.masonry {
+  margin: 0 auto;
+  margin-bottom: 100px;
 }
 
-.gutter-sizer {
-	width: 3%;
+.masonry .item {
+  width:  350px;
+  float: left;
+  background: #D26;
+  border: 2px solid #333;
+  border-color: hsla(0, 0%, 0%, 0.5);
+  border-radius: 5px;
 }
