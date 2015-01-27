@@ -24,7 +24,7 @@ $roots_includes = array(
   'lib/scripts.php',         // Scripts and stylesheets
   'lib/extras.php',          // Custom functions
 );
-
+add_theme_support( 'post-thumbnails' ); 
 // disable admin bar
 add_filter('show_admin_bar', '__return_false');
 

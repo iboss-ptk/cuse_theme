@@ -13,37 +13,48 @@
 		<!-- <div class="small-offset-2 small-1 columns"><span class="more-button">more</span></div> -->
 	</div>	
 
+	<?php
+		$args = array(
+	'post_type' => 'news',
+	'posts_per_page' => 3,
+	'orderby' => 'the_date',
+	'order' => 'ASC');	
+	$wp_query = new WP_Query( $args );
+	
+	?>
 	<div class="rows card-group" data-equalizer>
+	<?php if ( $wp_query->have_posts() ) : ?>
+  	<?php while ( $wp_query->have_posts() ) : $wp_query->the_post(); // Start the Loop.?>
+
+	
 	<!-- wp news loop -->
+	
 	<div class="post-card small-12 large-4 columns no-pad" data-equalizer-watch>
+		<a href=<?php the_permalink() ; ?>>
 		<div class='post-card-cover'></div>
 		<div class="seperate">
-			<div class="no-pad img-container"><img src="https://fbcdn-sphotos-e-a.akamaihd.net/hphotos-ak-xpa1/t31.0-8/10838087_905924192781735_1051433154773444473_o.jpg"></div>
+			<div class="no-pad img-container">
+				        <?php if ( has_post_thumbnail() ) {
+						the_post_thumbnail();} 						
+						?></div>
 			<div class="post-card-content small-offset-1 small-10">
-				<h4>Curabitur facilisis rutrum tortor</h4>
-				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas luctus non urna a malesuada. In ac lorem vel nisi imperdiet cursus. Curabitur facilisis rutrum tortor, id rutrum lacus facilisis et. Phasellus non ipsum lobortis, tempor elit a, hendrerit nulla. Aenean semper facilisis augue id porttitor. Sed accumsan nibh a diam molestie, eu egestas mauris venenatis. Duis scelerisque luctus enim et gravida. Nam quis turpis non purus interdum luctus. Etiam gravida adipiscing venenatis.</p>
+				<h4><?php the_title(); ?></h4>
+				<p><?php
+						the_content(__('Read more','avia_framework'));?></p>
 			</div>
 		</div>
+		</a>
 	</div>
+	<?php endwhile; ?>
+  	<?php 
+	// clean up after our query
+	wp_reset_postdata(); 
+  	?>
+	<?php else:  ?>
+	<p><?php _e( 'Sorry, no posts matched your criteria.' ); ?></p>
+	<?php endif; ?>
 	<!-- end loop -->
 
-	<div class="post-card small-12 large-4 columns no-pad" data-equalizer-watch>
-		<div class='post-card-cover'></div>
-		<div class="no-pad img-container"><img src="http://portfoliotheme.org/invent/wp-content/uploads/2014/06/14906416037_cd3c0a4a72_k-2.jpg"></div>
-		<div class="post-card-content small-offset-1 small-10">
-			<h4>Duis scelerisque luctus enim et gravida</h4>
-			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas luctus non urna a malesuada. In ac lorem vel nisi imperdiet cursus. Curabitur facilisis rutrum tortor, id rutrum lacus facilisis et. Phasellus non ipsum lobortis, tempor elit a, hendrerit nulla. Aenean semper facilisis augue id porttitor. Sed accumsan nibh a diam molestie, eu egestas mauris venenatis. Duis scelerisque luctus enim et gravida. Nam quis turpis non purus interdum luctus. Etiam gravida adipiscing venenatis.</p>
-		</div>
-	</div>
-	<div class="post-card small-12 large-4 columns no-pad" data-equalizer-watch>
-		<div class='post-card-cover'></div>
-		<div class="no-pad img-container"><img src="http://portfoliotheme.org/invent/wp-content/uploads/2014/06/11259929275_3c3338971e_b-e1401946800279.jpg"></div>
-		<div class="post-card-content small-offset-1 small-10">
-			<h4>Nam quis turpis non purus interdum luctus</h4>
-			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas luctus non urna a malesuada. In ac lorem vel nisi imperdiet cursus. Curabitur facilisis rutrum tortor, id rutrum lacus facilisis et. Phasellus non ipsum lobortis, tempor elit a, hendrerit nulla. Aenean semper facilisis augue id porttitor. Sed accumsan nibh a diam molestie, eu egestas mauris venenatis. Duis scelerisque luctus enim et gravida. Nam quis turpis non purus interdum luctus. Etiam gravida adipiscing venenatis.</p>
-		</div>
-	</div>
-</div> <!-- end of rows -->
 </section>
 
 
