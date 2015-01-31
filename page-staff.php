@@ -1,3 +1,5 @@
+<?php get_template_part('templates/page', 'header'); ?>
+
 <?php
 
 	//$paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
@@ -12,7 +14,8 @@
   <?php while ( $wp_query->have_posts() ) : $wp_query->the_post(); // Start the Loop.?>
 
   <header>
-      <h1 class="entry-title"><?php the_title(); ?></h1>
+      <h1 class="entry-title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h1>
+
    </header>
       <?php the_field('image'); ?>
       <?php the_field('name_thai'); ?>
