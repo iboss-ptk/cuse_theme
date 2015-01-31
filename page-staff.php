@@ -2,7 +2,7 @@
 
 	//$paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
 	$args = array(
-	//"posts_per_page" =>1,
+	"posts_per_page" =>20,
 	"post_type" => "teacher",
 	//'paged'=>$paged
   );
@@ -15,12 +15,14 @@
       <h1 class="entry-title"><?php the_title(); ?></h1>
    </header>
       <?php the_field('image'); ?>
-      <?php the_field('name'); ?>
+      <?php the_field('name_thai'); ?>
+      <?php the_field('name_eng'); ?>
       <?php the_field('education'); ?>
-      <?php the_field('research'); ?>
+      <?php the_field('interests'); ?>
       <?php the_field('contact'); ?>
       <?php the_field('subject'); ?>
-      <?php the_field('research_topic'); ?>
+      <?php the_field('journal_articles'); ?>
+      <?php the_field('conferences/workshops'); ?>
   
 <?php endwhile; ?>
 <?php 

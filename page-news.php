@@ -45,7 +45,3 @@
 <p><?php _e( 'Sorry, no posts matched your criteria.' ); ?></p>
 <?php endif; ?>
 
-<!-- <div ng-app="application" ng-controller="storeController">
-  <input ng-model="a" type='text'>
-  <div>{{a}}</div>
-</div> -->
