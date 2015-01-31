@@ -30,7 +30,7 @@
 	<!-- wp news loop -->
 	
 	<div class="post-card small-12 large-4 columns no-pad" data-equalizer-watch>
-		<a href=<?php the_permalink() ; ?>>
+		<a href=<?php the_permalink() ; ?>></a>
 		<div class='post-card-cover'></div>
 		<div class="seperate">
 			<div class="no-pad img-container">
@@ -43,7 +43,6 @@
 						the_content(__('Read more','avia_framework'));?></p>
 			</div>
 		</div>
-		</a>
 	</div>
 	<?php endwhile; ?>
   	<?php 
@@ -54,7 +53,6 @@
 	<p><?php _e( 'Sorry, no posts matched your criteria.' ); ?></p>
 	<?php endif; ?>
 	<!-- end loop -->
-
 </section>
 
 

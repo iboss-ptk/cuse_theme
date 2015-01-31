@@ -1,4 +1,6 @@
 <?php while (have_posts()) : the_post(); ?>
+  <div class="page-content">
+  <div class="large-offset-2 large-8 small-offset-1 small-10">
   <article <?php post_class(); ?>>
     <header>
       <h1 class="entry-title"><?php the_title(); ?></h1>
@@ -16,4 +18,6 @@
     </footer>
     <?php comments_template('/templates/comments.php'); ?>
   </article>
+</div>
+</div>
 <?php endwhile; ?>

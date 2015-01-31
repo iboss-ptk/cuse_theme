@@ -27,7 +27,7 @@ $roots_includes = array(
 add_theme_support( 'post-thumbnails' ); 
 // disable admin bar
 add_filter('show_admin_bar', '__return_false');
-
+remove_filter ('acf_the_content', 'wpautop');
 foreach ($roots_includes as $file) {
   if (!$filepath = locate_template($file)) {
     trigger_error(sprintf(__('Error locating %s for inclusion', 'roots'), $file), E_USER_ERROR);

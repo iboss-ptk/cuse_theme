@@ -1,0 +1,57 @@
+* {
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body { font-family: sans-serif; }
+
+.masonry {
+  margin: 0 auto;
+  margin-bottom: 100px;
+  margin-top: -200px;
+}
+
+.masonry .item {
+  width:  450px;
+  float: left;
+}
+
+.masonry .post-card {
+	margin: 5px 5px;
+	@include vendor-prefix('box-shadow','0 1px 5px .5px #6C7A89');
+}
+
+.header {
+  padding-left: 10%;
+  padding-right: 10%;
+  position: relative;
+  margin-bottom: 120px;
+
+  .title {
+    // position: absolute;
+    h1 {
+      color: white;
+    }
+    left: 0;
+  }
+
+  .search {
+    margin-top: 40px;
+  }
+}
+
+.cover {
+  background: #2C3E50;
+   /* Safari 5.1, Chrome 10+ */
+  background: -webkit-linear-gradient(top, #2C3E50, rgba(0,0,0,0));
+
+  /* Firefox 3.6+ */
+  background: -moz-linear-gradient(top, #2C3E50, rgba(0,0,0,0));
+
+  /* IE 10 */
+  background: -ms-linear-gradient(top, #2C3E50, rgba(0,0,0,0));
+
+  /* Opera 11.10+ */
+  background: -o-linear-gradient(top, #2C3E50, rgba(0,0,0,0));
+}
