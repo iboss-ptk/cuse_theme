@@ -17,9 +17,10 @@
     {
       'title':'<?php the_title(); ?>',
       'subject_code':'<?php the_field("subject_code"); ?>',
-      'credits':'<?php the_field("credits"); ?>',
+      'subject_short':'<?php the_field("subject_short"); ?>',
       'subject_name_thai':'<?php the_field("subject_name_thai"); ?>',
       'subject_name_eng':'<?php the_field("subject_name_eng"); ?>',
+      'credits':'<?php the_field("credits"); ?>',
       'subject_description_eng':'<?php the_field("subject_description_eng"); ?>',
       'subject_description_thai':'<?php the_field("subject_description_thai"); ?>',
     },
@@ -34,9 +35,10 @@
    {{subject[0]}}
 
       <?php the_field('subject_code'); ?>
-      <?php the_field('credits'); ?>
+      <?php the_field('subject_short'); ?>
       <?php the_field('subject_name_thai'); ?>
       <?php the_field('subject_name_eng'); ?>
+      <?php the_field('credits'); ?>
       <?php the_field('subject_description_thai'); ?>
       <?php the_field('subject_description_eng'); ?>
 <?php endwhile; ?>
