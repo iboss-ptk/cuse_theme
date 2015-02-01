@@ -123,7 +123,7 @@ var Roots = {
         // header overlay
         var $overlay = $('.overlay');
         var header_height = $(window).height();
-        var transparency = 0.5+(scroll/(3*header_height));
+        var transparency = 0.5+(scroll/(5*header_height));
         $overlay.css({ opacity: transparency });
       });
     },

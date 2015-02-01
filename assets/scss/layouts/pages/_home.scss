@@ -1,5 +1,5 @@
 #header {
-    background: url('https://unsplash.imgix.net/45/QDSMoAMTYaZoXpcwBjsL__DSC0104-1.jpg') no-repeat;
+    background: url('http://cuse.dev/app/themes/cuse_theme/assets/img/campus.jpg') no-repeat;
     background-size: cover;
     background-attachment: fixed;
     min-width:100%;
@@ -19,7 +19,7 @@
 #header-label {
   position: absolute;
   top: 40%;
-  line-height: 200px;
+  line-height: 20px;
   width: 100%;
   color: white;
   margin: 0 auto;
@@ -113,6 +113,30 @@
   position: absolute;
   top: 50%;
   clear: both;
+}
+
+
+.mif {
+  @include button;
+  border: 1px solid #ECF0F1;
+  // background-color: rgba(#2C3E50,0.5);
+  color: #ECF0F1;
+  background-color: none;
+
+  &:hover {
+    background-color: #ECF0F1;
+    color: #2C3E50;
+  }
+}
+
+.nowop {
+  font-family: 'Roboto Condensed','Noto Sans Thai', sans-serif;
+  font-weight: 300;
+  font-size: 1.2em;
+  line-height: 3em;
+  background-color: rgba(0,0,0,.5);
+  margin-top: 3%;
+
 }
 
 /* class for after scroll */
