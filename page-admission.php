@@ -1,6 +1,7 @@
-<?php get_template_part('templates/page', 'header'); ?>
 
 
+<section class="page-content">
+  <div class="small-offset-1 small-10 medium-offset-1 medium-7">
 <!-- ปฏิทินการรับสมัคร-->
 <?php
 
@@ -15,7 +16,7 @@
   <?php if ( $wp_query->have_posts() ) : ?>
   <?php $wp_query->the_post(); // Start the Loop.?>
   <header>
-      <h1 class="entry-title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h1>
+      <h1 class="entry-title"><b><?php the_title(); ?></b></h1>
    </header>
       <?php the_content(); ?>
   <?php 
@@ -41,7 +42,7 @@
   <?php if ( $wp_query->have_posts() ) : ?>
   <?php $wp_query->the_post(); // Start the Loop.?>
   <header>
-      <h1 class="entry-title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h1>
+      <h1 class="entry-title"><b><?php the_title(); ?></b></h1>
    </header>
       <?php the_content(); ?>
   <?php 
@@ -67,7 +68,7 @@
   <?php if ( $wp_query->have_posts() ) : ?>
   <?php $wp_query->the_post(); // Start the Loop.?>
   <header>
-      <h1 class="entry-title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h1>
+      <h1 class="entry-title"><b><?php the_title(); ?></b></h1>
    </header>
       <?php the_content(); ?>
   <?php 
@@ -77,3 +78,7 @@
 <?php else:  ?>
 <p><?php _e( 'Sorry, no posts matched your criteria.' ); ?></p>
 <?php endif; ?>
+</div>
+
+<!-- <div class="onpage-nav medium-4 column no-pad">xxx</div> -->
+</section>
