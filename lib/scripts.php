@@ -25,8 +25,7 @@ function roots_scripts() {
 
   wp_enqueue_script('jquery');
 
-  wp_register_script('masonry', get_template_directory_uri() . 'bower_components/masonry/dist/masonry.pkgd.min.js 
-', array(), false, false);
+  wp_register_script('masonry', get_template_directory_uri() . '/bower_components/masonry/dist/masonry.pkgd.min.js', array(), false, false);
   // determine which page to use angularjs
   if ( is_page( array( 'news', 'subject' ) ) ) {
     wp_register_script('angularjs', 'https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.3.8/angular.min.js', array(), null, true);
@@ -35,6 +34,9 @@ function roots_scripts() {
 
   // angular app
   wp_register_script('news', get_template_directory_uri() . '/assets/js/news.js', array(), null, true);
+  wp_register_script('subject', get_template_directory_uri() . '/assets/js/subject.js', array(), null, true);
+  wp_register_script('admission', get_template_directory_uri() . '/assets/js/admission.js', array(), null, true);
+
   if( is_page('news') ) {
     wp_enqueue_script('masonry');
     wp_enqueue_script('news');
@@ -42,6 +44,17 @@ function roots_scripts() {
   
 
   // another js file
+  if( is_page( 'subject' )){
+    // wp_register_script('vexjs', get_template_directory_uri() . '/bower_components/vex/js/vex.min.js', array(), false, false);
+    // wp_enqueue_script('vexjs');
+    // wp_enqueue_style('vexcss', get_template_directory_uri() . '/bower_components/vex/css/vex.css', false);
+    // wp_enqueue_style('vexflat', get_template_directory_uri() . '/bower_components/vex/css/vex-theme-flat-attack.css', false);
+    wp_enqueue_script('subject');
+  }
+
+  if ( is_page('admission') ) {
+    wp_enqueue_script('admission');
+  }
 
   wp_register_script('roots_scripts', get_template_directory_uri() . '/assets/js/scripts.min.js', array(), '0fc6af96786d8f267c8686338a34cd38', true);
   wp_enqueue_script('roots_scripts');

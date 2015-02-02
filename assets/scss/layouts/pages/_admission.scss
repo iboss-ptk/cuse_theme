@@ -1,0 +1,37 @@
+.sidenav{
+	padding-top: 60px;
+	background-color: #22313F;
+	z-index: 0;
+	height: 100%;
+
+	div {
+		padding: 2px 0;
+		padding-left: 4%;
+		position: relative;
+		height: 60px;
+	}
+
+	a {
+		position: absolute;
+	  	top: 40%;
+		color: #EEEEEE;
+	}
+
+	.present {
+		border-left: 5px solid #F64747;
+		transition: all .3s ease-in-out;
+		background-color: #81CFE0;
+		padding-left: 4.5%;
+
+		a {
+			color: #34495E;
+			font-weight: bold;
+			vertical-align: middle;
+			margin: auto 0;
+		}
+	}
+}
+
+.tile {
+	margin-bottom: 10vw;
+}

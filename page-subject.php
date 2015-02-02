@@ -1,4 +1,16 @@
+<style type="text/css">
+  .subject{
+    padding: 20px 20px;
+    border-bottom: 1px solid #EEEEEE;
+    transition: all 0.3s ease-in-out;
+  }
+  .subject:hover {
+    background-color: #81CFE0;
+  }
+</style>
 
+<section class="page-content">
+<div class="small-offset-1 small-10 large-offset-2 large-8">
 <?php get_template_part('templates/page', 'header'); ?>
 <div ng-app>
 <?php
@@ -54,12 +66,13 @@
 <?php else:  ?>
 <p><?php _e( 'Sorry, no posts matched your criteria.' ); ?></p>
 <?php endif; ?> -->
-
-<br><br><br><br>
+<br>
 <input type="search" ng-model="q" placeholder="filter..." />
-  <div ng-repeat="subject in subjects | filter:q as results">
+  <div ng-repeat="subject in subjects | filter:q as results" class="subject">
     <h4 class="entry-title" ng-bind="subject['title']"></h4>
     <p ng-bind="subject['subject_description_thai']"></p>
+
   </div>
 </div>
-
+</div>
+</section>
