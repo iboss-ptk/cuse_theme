@@ -1,13 +1,16 @@
 <header id="header" data-type="background" data-speed="5">
 	<div id="header-overlay" class="overlay"></div>
 	<div id="header-label">
-		<h1 style="color: white">Software Engineering</h1>
-		<p>C H U L A L O N G K O R N&nbsp&nbspU N I V E R S I T Y</p>
-		<p class="nowop">February 2 - March 10. 2015</p>
-		<a href="<?php echo get_page_link(373) ?>" class="mif">NOW OPEN</a>
+		<h1 class="title-name" style="color: white">Software Engineering</h1>
+		<p class="title-name">C H U L A L O N G K O R N&nbsp&nbspU N I V E R S I T Y</p>
+		<div class="nowop">
+			<p>February 2 - March 10. 2015</p>
+			<a href="<?php echo get_page_link(373) ?>" class="mif">NOW OPEN</a>
+		</div>
 	</div>
 </header>
 
+<!--
  <section id="news">
 
 	<div class="small-12 no-pad section-title section-title-news rows">
@@ -28,7 +31,6 @@
   	<?php while ( $wp_query->have_posts() ) : $wp_query->the_post(); // Start the Loop.?>
 
 	
-	<!-- wp news loop -->
 	
 	<div class="post-card small-12 large-4 columns no-pad" data-equalizer-watch>
 		<a href=<?php the_permalink() ; ?>></a>
@@ -53,9 +55,8 @@
 	<?php else:  ?>
 	<p><?php _e( 'Sorry, no posts matched your criteria.' ); ?></p>
 	<?php endif; ?> 
-	<!-- end loop -->
- </section>
 
+ </section>
 
 <div class="rows" data-equalizer>
 <section id="instragram" class="small-12 large-4 columns no-pad" data-equalizer-watch>
@@ -76,6 +77,8 @@
 	</div>
 </section>
 </div> 
+
+-->
 
 <!-- <section id="content">
 <h1>&nbsp</h1>

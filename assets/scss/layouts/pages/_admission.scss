@@ -33,5 +33,37 @@
 }
 
 .tile {
-	margin-bottom: 10vw;
+	// margin-bottom: 10vw;
+}
+.paper-like-content-wrapper {
+	.cover-title-yellow {
+		background-color: $thm-yellow;
+		background-color: rgba($thm-yellow,0.9);
+	}
+}
+
+.paper-like-content-wrapper header > h3 {
+	background: $thm-magenta;
+	padding: 20px 0px;
+	// display: table;
+	
+	@media only screen and (min-width: 100px) {
+		margin-left: -30px;
+		padding-left: 20px;
+	}
+
+	@media #{$medium} {
+		padding-left: 60px;
+		margin-left: -60px;
+	}
+	@media #{$large} {
+		padding-left: 70px;
+		// padding-right: 160px;
+		margin-left: -160px;
+	}
+	
+	color: white;
+	margin-top: 60px;
+	margin-bottom: 50px;
+
 }

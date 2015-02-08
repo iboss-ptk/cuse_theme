@@ -113,6 +113,8 @@
   background-color: rgba($thm-white, 0.9);
   @media #{$small-up} {
     padding: 10px 30px;
+    margin-top: -10px;
+    margin-bottom: -70px;
   }
 
   @media #{$large-up} {
@@ -147,6 +149,9 @@
       position: absolute;
       bottom: 1%;
       color: white;
+      font-weight: 100;
+      font-size: 4em;
+      border-bottom: 2px solid white;
     }
   }
 }
@@ -158,4 +163,8 @@
     min-width:100%;
     margin: 0 auto;
     position: relative;
+}
+
+a {
+  color: $thm-lightgreen;
 }

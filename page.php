@@ -1,8 +1,11 @@
-<div class="page-content">
-	<div class="large-offset-2 large-8 small-offset-1 small-10">
-	<?php while (have_posts()) : the_post(); ?>
-	  <?php get_template_part('templates/page', 'header'); ?>
-	  <?php get_template_part('templates/content', 'page'); ?>
-	<?php endwhile; ?>
-	</div>
+<section class="page-content bg-handmouse">
+<div class="small-12 large-offset-1 large-10 paper-like-content-wrapper">
+
+  <?php while (have_posts()) : the_post(); ?>
+
+    <?php get_template_part('templates/page', 'header'); ?>
+    <hr>
+    <?php get_template_part('templates/content', 'page'); ?>
+  <?php endwhile; ?>
+  </div>
 </div>

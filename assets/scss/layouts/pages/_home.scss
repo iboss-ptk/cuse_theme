@@ -9,7 +9,7 @@
 }
 
 #header-overlay {
-  background-color:Black;
+  background-color: rgba($thm-asphalt,.4);
   min-width:100%;
   margin: 0 auto;
   position: relative;
@@ -18,14 +18,38 @@
 
 #header-label {
   position: absolute;
-  top: 40%;
+  top: 38%;
   line-height: 20px;
   width: 100%;
   color: white;
   margin: 0 auto;
   text-align: center;
   opacity: 1;
+  font-weight: 100;
+
+  .title-name {
+    background-color: rgba($thm-yellow,.9);
+    display: table;
+    margin: 0 auto;
+  }
+
+  h1.title-name{
+    font-size: 4em;
+    font-weight: 100;
+    padding: 10px 60px;
+  }
+
+  p.title-name {
+    // margin-top: 1px; 
+    font-weight: 100;
+    font-size: 1em;
+    padding: 10px 70px;
+    padding-top: 15px;
+    background-color: rgba($thm-magenta,.9);
+  }
 }
+
+
 
 .overlay {
   opacity: 0;
@@ -119,10 +143,8 @@
 .mif {
   @include button;
   border: 1px solid #ECF0F1;
-  // background-color: rgba(#2C3E50,0.5);
+  background-color: rgba($thm-asphalt,0.5);
   color: #ECF0F1;
-  background-color: none;
-
   &:hover {
     background-color: #ECF0F1;
     color: #2C3E50;
@@ -131,11 +153,18 @@
 
 .nowop {
   font-family: 'Roboto Condensed','Noto Sans Thai', sans-serif;
-  font-weight: 300;
+  font-weight: 100;
   font-size: 1.2em;
   line-height: 3em;
-  background-color: rgba(0,0,0,.5);
+  padding-top: 20px;
+  background-color: rgba($thm-asphalt,.5);
   margin-top: 3%;
+  width: 60%;
+  margin: 0 auto;
+  margin-top: 40px;
+  margin-bottom: 20px;
+  border-left: 1px solid $thm-lightgreen;
+  border-right: 1px solid $thm-lightgreen;
 
 }
 

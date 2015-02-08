@@ -2,7 +2,7 @@
 
 
 #footer {
-	background-color: #212121;
+	background-color: $thm-asphalt;
 	position: relative;
 	width: 100%;
 	clear: both;
@@ -13,4 +13,9 @@
 	h3 {
 		color: inherit;
 	}
+}
+
+.large {
+	font-size: 2em;
+	vertical-align: middle;
 }

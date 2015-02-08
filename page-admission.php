@@ -1,6 +1,9 @@
+<section class="page-content bg-handmouse">
+<div class="small-12 large-offset-1 large-10 paper-like-content-wrapper asplalt">
 
-<section class="page-content">
-  <div class="small-offset-1 small-10 medium-offset-1 medium-6">
+  <div class="cover-title cover-title-yellow">
+    <?php get_template_part('templates/page', 'header'); ?>
+    </div>
 
 <!-- ปฏิทินการรับสมัคร-->
 <?php
@@ -16,7 +19,7 @@
   <?php if ( $wp_query->have_posts() ) : ?>
   <?php $wp_query->the_post(); // Start the Loop.?>
   <header>
-      <h1 class="entry-title" ><b><?php the_title(); ?></b></h1>
+      <h3><?php the_title(); ?></h3>
    </header>
       <?php the_content(); ?>
   <?php 
@@ -43,7 +46,7 @@
   <?php if ( $wp_query->have_posts() ) : ?>
   <?php $wp_query->the_post(); // Start the Loop.?>
   <header>
-      <h1 class="entry-title"><b><?php the_title(); ?></b></h1>
+      <h3><?php the_title(); ?></h3>
    </header>
       <?php the_content(); ?>
   <?php 
@@ -69,7 +72,7 @@
   <?php if ( $wp_query->have_posts() ) : ?>
   <?php $wp_query->the_post(); // Start the Loop.?>
   <header>
-      <h1 class="entry-title"><b><?php the_title(); ?></b></h1>
+      <h3><?php the_title(); ?></h3>
    </header>
       <?php the_content(); ?>
   <?php 
@@ -83,10 +86,10 @@
 </div>
 
 <!-- <div class="onpage-nav medium-4 column no-pad">xxx</div> -->
-<div class="medium-offset-9 medium-3 fixed sidenav show-for-medium-up">
+<!-- <div class="medium-offset-9 medium-3 fixed sidenav show-for-medium-up">
   <div class="calendar"><a href="#calendar"><p>ปฏิทินการรับสมัคร</p></a></div>
   <div class="properties"><a href="#properties"><p>คุณสมบัติผู้สมัคร</p></a></div>
   <div class="method"><a href="#method"><p>วิธีการรับสมัคร</p></a></div>
   
-</div>
+</div> -->
 </section>
