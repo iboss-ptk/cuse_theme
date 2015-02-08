@@ -4,11 +4,11 @@
 		<h1 style="color: white">Software Engineering</h1>
 		<p>C H U L A L O N G K O R N&nbsp&nbspU N I V E R S I T Y</p>
 		<p class="nowop">February 2 - March 10. 2015</p>
-		<a href="http://www.google.com" class="mif">NOW OPEN</a>
+		<a href="<?php echo get_page_link(373) ?>" class="mif">NOW OPEN</a>
 	</div>
 </header>
 
-<!-- <section id="news">
+ <section id="news">
 
 	<div class="small-12 no-pad section-title section-title-news rows">
 		<span class="section-title-pad small-1 columns">News</span>
@@ -26,11 +26,11 @@
 	<div class="rows card-group" data-equalizer>
 	<?php if ( $wp_query->have_posts() ) : ?>
   	<?php while ( $wp_query->have_posts() ) : $wp_query->the_post(); // Start the Loop.?>
- -->
+
 	
 	<!-- wp news loop -->
 	
-<!-- 	<div class="post-card small-12 large-4 columns no-pad" data-equalizer-watch>
+	<div class="post-card small-12 large-4 columns no-pad" data-equalizer-watch>
 		<a href=<?php the_permalink() ; ?>></a>
 		<div class='post-card-cover'></div>
 		<div class="seperate">
@@ -52,9 +52,9 @@
   	?>
 	<?php else:  ?>
 	<p><?php _e( 'Sorry, no posts matched your criteria.' ); ?></p>
-	<?php endif; ?> -->
+	<?php endif; ?> 
 	<!-- end loop -->
-<!-- </section>
+ </section>
 
 
 <div class="rows" data-equalizer>
@@ -75,7 +75,7 @@
 	</div>
 	</div>
 </section>
-</div> -->
+</div> 
 
 <!-- <section id="content">
 <h1>&nbsp</h1>
