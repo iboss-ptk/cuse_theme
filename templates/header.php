@@ -4,7 +4,7 @@
     <nav class="top-bar" data-topbar>
       <ul class="title-area">
         <!-- <li class="name"> <h1><a href="<?php echo esc_url(home_url()); ?>"><?php bloginfo('name'); ?></a></h1> </li> -->
-        <li class="name"> <h1><a href="<?php echo esc_url(home_url()); ?>">
+        <li class="name"> <h1><a href="<?php echo esc_url(home_url()).'/'; ?>">
             <div class="header-title">
               <div class="se">Software Engineering</div>
               <div class="cu">Chulalongkorn University</div>
