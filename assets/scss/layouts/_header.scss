@@ -6,6 +6,11 @@
 
 .top-bar {
 	background: none;
+	img {
+		display: inline-block;
+		margin-top: -23px;
+		margin-right: 5px;
+	}
 }
 
 .top-bar-section li:not(.has-form) a:not(.button) {
@@ -39,7 +44,7 @@
 }
 
 .header-title {
-
+	display: inline-block;
 	.se {
 		margin-top: -10px;
 	}

@@ -1,11 +1,11 @@
 #header {
-    background: url('http://www.cp.eng.chula.ac.th/se/app/themes/cuse_theme/assets/img/campus.jpg') no-repeat;
-    background-size: cover;
-    background-attachment: fixed;
-    min-width:100%;
-    margin: 0 auto;
-    position: relative;
-    height:700px;
+  background: url('http://www.cp.eng.chula.ac.th/se/app/themes/cuse_theme/assets/img/campus.jpg') no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  min-width:100%;
+  margin: 0 auto;
+  position: relative;
+  min-height:800px;
 }
 
 #header-overlay {
@@ -13,12 +13,15 @@
   min-width:100%;
   margin: 0 auto;
   position: relative;
-  height: 700px;
+  min-height:800px;
 }
 
 #header-label {
   position: absolute;
-  top: 38%;
+  top: 20%;
+  @media #{$medium} {
+    top: 38%;
+  }
   line-height: 20px;
   width: 100%;
   color: white;
@@ -28,24 +31,41 @@
   font-weight: 100;
 
   .title-name {
-    background-color: rgba($thm-yellow,.9);
+    background-color: rgba(#99001C,.9);
     display: table;
     margin: 0 auto;
   }
 
-  h1.title-name{
-    font-size: 4em;
+  div.title-name h1{
+    font-size: 3.5em;
     font-weight: 100;
-    padding: 10px 60px;
+    padding: 10px 80px;
+    letter-spacing: 2px;
+    font-family: 'Ubuntu';
   }
 
   p.title-name {
     // margin-top: 1px; 
     font-weight: 100;
-    font-size: 1em;
-    padding: 10px 70px;
-    padding-top: 15px;
-    background-color: rgba($thm-magenta,.9);
+    padding: 4px 120px;
+    background-color: rgba($thm-yellow,.9);
+    font-family: 'Roboto Condensed';
+    letter-spacing: 2px;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 1.5em;
+  }
+
+  .title-name .lv0 {
+    margin-top: -20px;
+    padding: 2px 4px;
+    // background-color: rgba(242,163,52,.9);
+    font-family: 'Roboto Condensed';
+    font-size: 1.2em;
+    font-weight: 100;
+
+    letter-spacing: 1.5px;
+
   }
 }
 
@@ -165,7 +185,8 @@
   margin-bottom: 20px;
   border-left: 1px solid $thm-lightgreen;
   border-right: 1px solid $thm-lightgreen;
-
+  -webkit-animation-delay: 1s; /* Chrome, Safari, Opera */
+  animation-delay: 1s;
 }
 
 /* class for after scroll */

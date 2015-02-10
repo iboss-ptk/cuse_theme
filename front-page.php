@@ -1,9 +1,14 @@
 <header id="header" data-type="background" data-speed="5">
 	<div id="header-overlay" class="overlay"></div>
 	<div id="header-label">
-		<h1 class="title-name" style="color: white">Software Engineering</h1>
-		<p class="title-name">C H U L A L O N G K O R N&nbsp&nbspU N I V E R S I T Y</p>
-		<div class="nowop">
+		<div class="title-name">
+			<h1 style="color: white">Software Engineering</h1>
+			<p class="lv0">Department of Computer Engineering, Faculty of Engineering</p>
+		</div>
+		
+		<p class="title-name">
+			Chulalongkorn University</p>
+		<div class="nowop animated fadeInUp">
 			<p>February 2 - March 10. 2015</p>
 			<a href="<?php echo get_page_link(373) ?>" class="mif">NOW OPEN</a>
 		</div>
