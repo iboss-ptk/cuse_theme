@@ -71,7 +71,7 @@
 <p><?php _e( 'Sorry, no posts matched your criteria.' ); ?></p>
 <?php endif; ?> -->
 <br>
-<input class="custom" type="search" ng-model="q" placeholder="filter..." />
+<input class="custom" type="search" ng-model="q" placeholder="Enter search keyword..." />
 
   <div ng-repeat="subject in subjects | filter:q as results" class="subject">
     <a href="#" data-reveal-id="{{subject.iden}}" data-animation="fade" data-animationSpeed="2500">
