@@ -155,11 +155,15 @@
     }
   }
   a {
-    color: $thm-asphalt;
+    color: darken($thm-lightgreen, 6%);
     &:hover {
       color: $thm-lightgreen;
     }
   }
+}
+
+.paper-like-content-wrapper li {
+  margin-bottom: 10px;
 }
 
 .bg-handmouse {

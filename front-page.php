@@ -9,7 +9,7 @@
 		<p class="title-name">
 			Chulalongkorn University</p>
 		<div class="nowop animated fadeInUp">
-			<p>Now open from Feb 2 - March 10, 2015 for Software Engineering Program, Academic Year 1/2015</p>
+			<p><u>NOW OPEN</u> from <i>Feb 2</i> to <i>March 10, 2015</i><br> for Software Engineering Program, Academic Year 1/2015</p>
 			<a href="<?php echo get_page_link(373) ?>" class="mif">MORE INFO</a>
 		</div>
 	</div>
