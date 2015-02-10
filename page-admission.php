@@ -83,6 +83,32 @@
 <?php else:  ?>
 <p><?php _e( 'Sorry, no posts matched your criteria.' ); ?></p>
 <?php endif; ?>
+
+<!-- ค่าเล่าเรียน/ค่าธรรมเนียมการศึกษา-->
+<?php
+
+  //$paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
+  $args = array(
+  "post_type" => "admission",
+  "name" => "ค่าเล่าเรียน/ค่าธรรมเนียมการศึกษา",
+  //'paged'=>$paged
+  );
+  $wp_query = new WP_Query($args);?>
+  <div class="tile" id="method">
+  <?php if ( $wp_query->have_posts() ) : ?>
+  <?php $wp_query->the_post(); // Start the Loop.?>
+  <header>
+      <h3><?php the_title(); ?></h3>
+   </header>
+      <?php the_content(); ?>
+  <?php 
+  // clean up after our query
+  wp_reset_postdata(); 
+  ?>
+</div>
+<?php else:  ?>
+<p><?php _e( 'Sorry, no posts matched your criteria.' ); ?></p>
+<?php endif; ?>
 </div>
 
 <!-- <div class="onpage-nav medium-4 column no-pad">xxx</div> -->
