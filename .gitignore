@@ -1,5 +1,5 @@
 node_modules/**
-bower_components/**
+# bower_components/**
 # assets/css/main.min.css.map
 .sass-cache
 # assets/css/main.min.css
