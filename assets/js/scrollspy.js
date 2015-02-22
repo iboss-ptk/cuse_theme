@@ -248,14 +248,14 @@ $(function() {
 
 $('.tile').on('scrollSpy:enter', function() {
   var id = '.'+$(this).attr('id');
-  // $('.sidenav > div').removeClass('present');
+  $('.present').removeClass('present');
   $(id).addClass('present');
 });
 
 $('.tile').on('scrollSpy:exit', function() {
-  var id = '.'+$(this).attr('id');
-  $(id).removeClass('present');
-  presence = false;
+  // var id = '.'+$(this).attr('id');
+  // $(id).removeClass('present');
+  // presence = false;
 });
 
-$('.tile').scrollSpy({offsetTop: 400});
+$('.tile').scrollSpy({offsetTop: 500});

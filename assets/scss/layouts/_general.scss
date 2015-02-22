@@ -4,6 +4,48 @@
 // Main content area
 .main { }
 
+.sidenav{
+  margin-top: 60px;
+  // padding-top: 30px;
+  background-color: rgba($thm-black,.5);
+  z-index: 0;
+  height: 100%;
+
+  div {
+    padding: 1px 10px;
+    padding-left: 2%;
+    padding-right: 1%;
+    position: relative;
+    border-bottom: 1px solid $thm-white;
+    border-bottom: 1px solid rgba($thm-white, .1);
+    // min-height: 60px;
+    vertical-align: middle;
+    a {
+      position: relative;
+      color: darken($thm-white, 30%);
+      &:before {
+        content: "Developed by: Boss - Supanat Potiwarakorn, P - Peerapat Jankhow, Cos - Amornthip Rakkwamsook";
+        height: 5px;
+        visibility: hidden;
+      }
+    }
+  }
+
+  .present {
+    // border-left: 5px solid #F64747;
+    transition: all .3s ease-in-out;
+    background-color: rgba($thm-white, 0.3);
+    padding-left: 3%;
+
+    a {
+      color: $thm-white;
+      font-weight: bold;
+      vertical-align: middle;
+      margin: auto 0;
+    }
+  }
+}
+
 
 .img-container {
   height: 264px;
@@ -137,8 +179,8 @@
   .cover-title {
     height: 350px;
     position: relative;
-    background: $thm-magenta;
-    background: rgba($thm-magenta,.9);
+    background: $thm-intaniared;
+    background: rgba($thm-intaniared,.9);
     margin-left: -130px;
     margin-right: -130px;
     padding-left: 130px;
@@ -155,10 +197,17 @@
     }
   }
   a {
-    color: darken($thm-lightgreen, 6%);
+    color: darken($thm-intaniared, 6%);
     &:hover {
-      color: $thm-lightgreen;
+      color: $thm-intaniared;
     }
+  }
+}
+
+.paper-like-content-wrapper.with-side {
+  @media #{$large-up} { 
+    margin-left: 3%;
+    width: 94%;
   }
 }
 
@@ -169,6 +218,33 @@
 
 .paper-like-content-wrapper h3 {
   font-weight: 100;
+}
+
+.paper-like-content-wrapper header > h3 {
+  background: $thm-yellow;
+  padding: 20px 0px;
+  // display: table;
+  
+  @media only screen and (min-width: 100px) {
+    margin-left: -30px;
+    padding-left: 20px;
+  }
+
+  @media #{$medium} {
+    padding-left: 60px;
+    margin-left: -60px;
+  }
+  @media #{$large} {
+    padding-left: 70px;
+    // padding-right: 160px;
+    margin-left: -17%;
+    width: 125%;
+  }
+  
+  color: white;
+  margin-top: 60px;
+  margin-bottom: 50px;
+
 }
 
 

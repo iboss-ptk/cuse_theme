@@ -30,7 +30,7 @@
   <div ng-init="subjects=[
   <?php while ( $wp_query->have_posts() ) : $wp_query->the_post(); // Start the Loop.?>
     {
-      'title':'<?php the_title(); ?>',
+      'title':'<?php the_field("subject_code"); ?>'+' '+'<?php the_field("subject_name_thai"); ?>'+'</h4><br><h4>'+'<?php the_field("subject_name_eng"); ?>',
       'subject_code':'<?php the_field("subject_code"); ?>',
       'subject_short':'<?php the_field("subject_short"); ?>',
       'subject_name_thai':'<?php the_field("subject_name_thai"); ?>',
@@ -76,7 +76,9 @@
   <div ng-repeat="subject in subjects | filter:q as results" class="subject">
     <a href="#" data-reveal-id="{{subject.iden}}" data-animation="fade" data-animationSpeed="2500">
       <div style="min-height: 120%">
-        <h4 class="entry-title" ng-bind="subject['title']"></h4>
+        <!-- <h4 class="entry-title" ng-bind="subject['title']"></h4> -->
+        <h4 class="entry-title" ng-bind="subject['subject_code']+' '+subject['subject_name_thai']"></h4>
+        <h5 class="entry-title" ng-bind="subject['subject_name_eng']+' [ '+subject['subject_short']+' ]'"></h5>
       </div>
     </a>
     

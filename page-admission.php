@@ -1,7 +1,8 @@
 <section class="page-content bg-handmouse">
-<div class="small-12 large-offset-1 large-10 paper-like-content-wrapper asplalt">
+<div class="small-12 large-10">
+<div class="small-12 paper-like-content-wrapper with-side asplalt">
 
-  <div class="cover-title cover-title-yellow">
+  <div class="cover-title">
     <?php get_template_part('templates/page', 'header'); ?>
     </div>
 
@@ -94,7 +95,7 @@
   //'paged'=>$paged
   );
   $wp_query = new WP_Query($args);?>
-  <div class="tile" id="method">
+  <div class="tile" id="payment">
   <?php if ( $wp_query->have_posts() ) : ?>
   <?php $wp_query->the_post(); // Start the Loop.?>
   <header>
@@ -112,10 +113,11 @@
 </div>
 
 <!-- <div class="onpage-nav medium-4 column no-pad">xxx</div> -->
-<!-- <div class="medium-offset-9 medium-3 fixed sidenav show-for-medium-up">
+<div class="large-offset-10 large-2 fixed sidenav show-for-large-up">
   <div class="calendar"><a href="#calendar"><p>ปฏิทินการรับสมัคร</p></a></div>
   <div class="properties"><a href="#properties"><p>คุณสมบัติผู้สมัคร</p></a></div>
   <div class="method"><a href="#method"><p>วิธีการรับสมัคร</p></a></div>
-  
-</div> -->
+  <div class="payment"><a href="#payment"><p>ค่าเล่าเรียน/<br>ค่าธรรมเนียมการศึกษา</p></a></div>
+</div>
+</div>
 </section>

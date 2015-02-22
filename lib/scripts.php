@@ -35,7 +35,7 @@ function roots_scripts() {
   // angular app
   wp_register_script('news', get_template_directory_uri() . '/assets/js/news.js', array(), null, true);
   wp_register_script('subject', get_template_directory_uri() . '/assets/js/subject.js', array(), null, true);
-  wp_register_script('admission', get_template_directory_uri() . '/assets/js/admission.js', array(), null, true);
+  wp_register_script('scrollspy', get_template_directory_uri() . '/assets/js/scrollspy.js', array(), null, true);
 
   if( is_page('news') ) {
     wp_enqueue_script('masonry');
@@ -52,8 +52,8 @@ function roots_scripts() {
     wp_enqueue_script('subject');
   }
 
-  if ( is_page('admission') ) {
-    wp_enqueue_script('admission');
+  if ( is_page('admission') || is_page('course-overview') ) {
+    wp_enqueue_script('scrollspy');
   }
 
   wp_register_script('roots_scripts', get_template_directory_uri() . '/assets/js/scripts.min.js', array(), '0fc6af96786d8f267c8686338a34cd38', true);
