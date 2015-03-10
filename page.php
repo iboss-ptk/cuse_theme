@@ -3,8 +3,10 @@
 
   <?php while (have_posts()) : the_post(); ?>
 
+  	 <div class="cover-title">
     <?php get_template_part('templates/page', 'header'); ?>
-    <hr>
+    </div>
+
     <?php get_template_part('templates/content', 'page'); ?>
   <?php endwhile; ?>
   </div>

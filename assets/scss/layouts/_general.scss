@@ -157,6 +157,7 @@
     padding: 10px 30px;
     margin-top: -10px;
     margin-bottom: -70px;
+    padding-top: 98px;
   }
 
   @media #{$large-up} {
@@ -234,13 +235,14 @@
     padding-left: 60px;
     margin-left: -60px;
   }
+
   @media #{$large} {
     padding-left: 70px;
     // padding-right: 160px;
-    margin-left: -17%;
+    margin-left: -150px;
     width: 125%;
   }
-  
+
   color: white;
   margin-top: 60px;
   margin-bottom: 50px;

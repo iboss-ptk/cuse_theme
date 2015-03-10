@@ -11,10 +11,12 @@
 
 </style>
 
-<section class="page-content bg-handmouse">
+<section class="page-content bg-handmouse" ng-app='courseApp'>
 <div class="small-12 large-offset-1 large-10 paper-like-content-wrapper">
-<?php get_template_part('templates/page', 'header'); ?>
-<div ng-app>
+ <div class="cover-title">
+    <?php get_template_part('templates/page', 'header'); ?>
+    </div>
+<div ng-controller='courseCtrl'>
 
 <?php
   
@@ -27,53 +29,11 @@
 	$wp_query = new WP_Query($args);?>
     
   <?php if ( $wp_query->have_posts() ) : ?>
-  <div ng-init="subjects=[
-  <?php while ( $wp_query->have_posts() ) : $wp_query->the_post(); // Start the Loop.?>
-    {
-      'title':'<?php the_field("subject_code"); ?>'+' '+'<?php the_field("subject_name_thai"); ?>'+'</h4><br><h4>'+'<?php the_field("subject_name_eng"); ?>',
-      'subject_code':'<?php the_field("subject_code"); ?>',
-      'subject_short':'<?php the_field("subject_short"); ?>',
-      'subject_name_thai':'<?php the_field("subject_name_thai"); ?>',
-      'subject_name_eng':'<?php the_field("subject_name_eng"); ?>',
-      'credits':'<?php the_field("credits"); ?>',
-      'subject_description_eng':'<?php the_field("subject_description_eng"); ?>',
-      'subject_description_thai':'<?php the_field("subject_description_thai"); ?>',
-      'iden' : '<?php echo str_replace(" ","_",get_field("subject_name_eng"));?>'
-    },
-  <?php endwhile; ?>
-  ]"></div>
-<!--   <?php while ( $wp_query->have_posts() ) : $wp_query->the_post(); // Start the Loop.?>
-
-  <header>
-      <h4 class="entry-title"><?php the_title(); ?></h1>
-   </header>
-
-   {{subject[0]}}
-
-      <?php the_field('subject_code'); ?>
-      <?php the_field('subject_short'); ?>
-      <?php the_field('subject_name_thai'); ?>
-      <?php the_field('subject_name_eng'); ?>
-      <?php the_field('credits'); ?>
-      <?php the_field('subject_description_thai'); ?>
-      <?php the_field('subject_description_eng'); ?>
-<?php endwhile; ?>
-<?php 
-      //echo get_next_posts_link( 'Older Entries', $wp_query->max_num_pages ); 
-      //echo get_previous_posts_link( 'Newer Entries' ); 
-      ?>
-
-  <?php 
-	// clean up after our query
-	wp_reset_postdata(); 
-  ?>
-<?php else:  ?>
-<p><?php _e( 'Sorry, no posts matched your criteria.' ); ?></p>
-<?php endif; ?> -->
 <br>
-<input class="custom" type="search" ng-model="q" placeholder="Enter search keyword..." />
 
-  <div ng-repeat="subject in subjects | filter:q as results" class="subject">
+<input class="custom" type="search" ng-model="q.title" placeholder="Enter search keyword..." />
+
+  <div ng-repeat="subject in subjects | filter:q:strict" class="subject">
     <a href="#" data-reveal-id="{{subject.iden}}" data-animation="fade" data-animationSpeed="2500">
       <div style="min-height: 120%">
         <!-- <h4 class="entry-title" ng-bind="subject['title']"></h4> -->
@@ -105,3 +65,39 @@
 </div>
 </div>
 </section>
+
+<script type="text/javascript">
+  var courseApp = angular.module('courseApp', []);
+  courseApp.controller('courseCtrl', [ '$scope', function ($scope) {
+  subjs=[
+  <?php while ( $wp_query->have_posts() ) : $wp_query->the_post(); // Start the Loop.?>
+    {
+      'title':'<?php the_field("subject_code"); ?>'+' '+'<?php the_field("subject_name_thai"); ?>'+'</h4><br><h4>'+'<?php the_field("subject_name_eng"); ?>',
+      'subject_code':'<?php the_field("subject_code"); ?>',
+      'subject_short':'<?php the_field("subject_short"); ?>',
+      'subject_name_thai':'<?php the_field("subject_name_thai"); ?>',
+      'subject_name_eng':'<?php the_field("subject_name_eng"); ?>',
+      'credits':'<?php the_field("credits"); ?>',
+      'subject_description_eng':'<?php the_field("subject_description_eng"); ?>',
+      'subject_description_thai':'<?php the_field("subject_description_thai"); ?>',
+      'iden' : '<?php echo str_replace(" ","_",get_field("subject_name_eng"));?>'
+    },
+  <?php endwhile; ?>
+    ];
+
+  subjs.sort(function(a, b){
+    var a_code = parseInt(a.subject_code);
+    var b_code = parseInt(b.subject_code);
+    if (a_code > b_code) {
+      return 1;
+    } else return -1;
+  });
+
+  for (var i = subjs.length - 1; i >= 0; i--) {
+    console.log(subjs[i].subject_code);
+  };
+
+  $scope.subjects = subjs;
+  }]);
+</script>
+<?php endif; ?>

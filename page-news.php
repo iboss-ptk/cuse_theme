@@ -1,9 +1,14 @@
-<div class="page-content cover">
-<div class="header">
-  <div class="title"><?php get_template_part('templates/page', 'header'); ?></div>
-  <div class="search"><?php get_search_form() ?></div>
-</div>
-</div>
+<section class="page-content bg-handmouse">
+<div class="small-12 large-10 large-offset-1 paper-like-content-wrapper asplalt">
+
+  <div class="cover-title">
+    <?php get_template_part('templates/page', 'header'); ?>
+    </div>
+
+<div class="search"><?php get_search_form() ?></div>
+
+
+<div class="news-container">
 <?php
 
 	$paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
@@ -44,4 +49,6 @@
 <?php else:  ?>
 <p><?php _e( 'Sorry, no posts matched your criteria.' ); ?></p>
 <?php endif; ?>
-
+</div>
+</div>
+</section>
