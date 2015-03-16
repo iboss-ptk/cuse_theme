@@ -1,4 +1,4 @@
-<div class="contain-to-grid fixed shadowing">
+<div class="contain-to-grid fixed shadowing" style="z-index:9999999">
   <?php if ( is_admin_bar_showing() ) echo '<div class="wpam-debug"></div>'; ?>
   <header>
     <nav class="top-bar" data-topbar>
