@@ -8,8 +8,24 @@
 		
 		<p class="title-name">Chulalongkorn University</p>
 		<div class="nowop animated fadeInUp">
-			<p><u>NOW OPEN</u> from <i>Feb 2</i> to <i>March 10, 2015</i><br> for Software Engineering Program, Academic Year 1/2015</p>
-			<a href="<?php echo get_page_link(373) ?>" class="mif">MORE INFO</a>
+			<div class="announce-item">
+				<div id="arrow-left" class="arrow"></div>
+				<div class="announce">
+					<p><u>NOW OPEN</u> from <i>Feb 2</i> to <i>March 10, 2015</i><br> for Software Engineering Program, Academic Year 1/2015</p>
+					<a href="<?php echo get_page_link(373) ?>" class="mif">MORE INFO</a>
+				</div>
+
+				<div class="announce hide">
+					<p><u>NOW OPEN 2</u> from <i>Feb 2</i> to <i>March 10, 2015</i><br> for Software Engineering Program, Academic Year 1/2015</p>
+					<a href="<?php echo get_page_link(373) ?>" class="mif">MORE INFO</a>
+				</div>
+
+				<div class="announce hide">
+					<p><u>NOW OPEN 3</u> from <i>Feb 2</i> to <i>March 10, 2015</i><br> for Software Engineering Program, Academic Year 1/2015</p>
+					<a href="<?php echo get_page_link(373) ?>" class="mif">MORE INFO</a>
+				</div>
+				<div id="arrow-right" class="arrow"></div>
+			</div>
 		</div>
 	</div>
 </header>
@@ -164,6 +180,12 @@
 					</div>
 				</div>
 			</div>
+
+			<div class="event-item">
+				<div class="center">
+					<a href="#"><h4><u>MORE</u></h4></a>
+				</div>
+			</div>
 			<!-- end event -->
 			
 			<!-- <div class="no-event text-center">
@@ -173,3 +195,35 @@
 	</section>
 </div> 
 
+<script type="text/javascript">
+	var arl = document.getElementById("arrow-left");
+	var arr = document.getElementById("arrow-right");
+
+	var announce = document.getElementsByClassName("announce");
+	var max = announce.length;
+	var i = 0;
+
+	function nav (i, max, dir) {
+		if (dir == 1) { i++ }
+		else if (dir == 0) { i-- };
+
+		if (i >= max) { return 0 };
+		if (i < 0) { return max-1 };
+		return i
+	}
+
+	arl.addEventListener("click", function(){
+		announce[i].className = "announce hide"
+		i = nav(i, max, 0);
+		announce[i].className = "announce fadeIn"
+		// console.log(i);
+	});
+
+	arr.addEventListener("click", function(){
+		announce[i].className = "announce hide"
+		i = nav(i, max, 1);
+		announce[i].className = "announce fadeIn"
+		// console.log(i);
+	});
+
+</script>

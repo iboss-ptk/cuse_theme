@@ -18,21 +18,26 @@
 
      <div class="row" style="border-bottom:1px solid rgba(44, 62, 80, 0.9); padding-bottom:40px;">
       <div class="small-12 medium-3 columns">
-        <img src="<?php echo get_field('image')["sizes"]["medium"]; ?>" style="margin-top:100px;">
+        <a href="<?php the_permalink(); ?>">
+          <img src="<?php echo get_field('image')["sizes"]["medium"]; ?>" style="margin-top:98px;">
+        </a>
       </div>
       <div class="small-12 medium-8 medium-offset-1 columns">
         <header>
           <h1 class="entry-title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h1>
           <div style="margin-top:-45px;margin-bottom:45px;"><h5><?php echo get_field('name_eng'); ?></h5></div>
         </header>
-        <h4>education</h4>
+
+        <h4>Contact</h4>
+        <?php the_field('contact'); ?>
+
+        <h4>Education</h4>
         <?php the_field('education'); ?>
 
-        <h4>interests</h4>
+        <h4>Interests</h4>
         <?php the_field('interests'); ?>
         
-        <h4>contact</h4>
-        <?php the_field('contact'); ?>
+        
 <!--       <?php the_field('subject'); ?>
       <?php the_field('journal_articles'); ?>
       <?php the_field('conferences/workshops'); ?> -->

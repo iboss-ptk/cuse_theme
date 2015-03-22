@@ -21,7 +21,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	    	<h1>Event</h1>
 	    </div>
 	    
-	    <div id="tribe-events-pg-template" style="padding-top:0em;padding-bottom:2em;">
+	    <div id="tribe-events-pg-template" style="padding-top:2em;padding-bottom:2em;">
 		<?php tribe_events_before_html(); ?>
 		<?php tribe_get_view(); ?>
 		<?php tribe_events_after_html(); ?>

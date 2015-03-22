@@ -272,6 +272,36 @@ time.icon span {
     transform: translate(0, -50%);
   }
 }
+
+#arrow-left {
+    left: 1%;
+    border-left:3px solid $thm-white;
+    border-bottom:3px solid $thm-white;
+    transform: rotate(45deg);
+}
+
+#arrow-right {
+    right: 1%;
+    border-right:3px solid $thm-white;
+    border-bottom:3px solid $thm-white;
+    transform: rotate(-45deg);
+}
+
+.announce-item {
+  position: relative;
+  width: 100%;
+  .content {
+    display: inline-block;
+  }
+  .arrow {
+    position: absolute;
+    top: 35%;
+    width:20px;
+    height:20px;
+    transform: translate(0, -50%);
+  }
+}
+
 /* class for after scroll */
 
 // .scrolled {
