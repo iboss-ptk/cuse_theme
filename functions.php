@@ -43,3 +43,6 @@ foreach ($roots_includes as $file) {
   require_once $filepath;
 }
 unset($file, $filepath);
+
+// Hides the iCal/Export Listed Events link from tribe archive views such as List and Month
+remove_filter('tribe_events_after_footer', array('TribeiCal', 'maybe_add_link'), 10, 1);
