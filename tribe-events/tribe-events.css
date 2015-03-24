@@ -1,0 +1,12 @@
+.single-tribe_events .tribe-events-event-meta {
+    background: #fff;
+}
+
+#tribe-events-content {
+	position: relative;
+	margin-bottom: 48px;
+	padding: 1px 0;
+	/*background-color: rgba(245, 245, 245, 1);*/
+}
+
+table{margin:30px auto;width:100%}tr:nth-child(1){background-color:#dd554f}tr:nth-child(1) td{color:#fff}td:nth-child(1),tr td:nth-child(3){text-align:center;padding:0 5%}
