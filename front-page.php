@@ -212,18 +212,29 @@
 		return i
 	}
 
+	var transTimer = setInterval(function(){
+		announce[i].className = "announce hide"
+		i = nav(i, max, 1);
+		announce[i].className = "announce fadeInRight animated"
+	},5000);
+
 	arl.addEventListener("click", function(){
 		announce[i].className = "announce hide"
 		i = nav(i, max, 0);
-		announce[i].className = "announce fadeIn"
+		announce[i].className = "announce fadeInLeft animated"
+		clearInterval(transTimer);
 		// console.log(i);
 	});
 
 	arr.addEventListener("click", function(){
 		announce[i].className = "announce hide"
 		i = nav(i, max, 1);
-		announce[i].className = "announce fadeIn"
+		announce[i].className = "announce fadeInRight animated"
+		clearInterval(transTimer);
 		// console.log(i);
 	});
+
+
+	
 
 </script>
