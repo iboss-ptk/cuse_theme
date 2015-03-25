@@ -128,6 +128,13 @@
 
 .section-title-news {
   border-color: #F9690E;
+  a {
+    color: $thm-white;
+    text-decoration: underline;
+    &:hover {
+      color: $thm-lightgreen;
+    }
+  }
 }
 
 .section-title-instragram {
@@ -153,7 +160,7 @@
     max-height: 720px;
   }
   @media #{$large-up} {
-    min-height: 700px;
+    min-height: 0px;
   }
   position: relative;
   overflow: scroll;
