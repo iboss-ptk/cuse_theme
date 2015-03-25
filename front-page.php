@@ -176,120 +176,70 @@
 		<p><?php _e( 'Sorry, no posts matched your criteria.' ); ?></p>
 	<?php endif; ?> 
 </section>
-
-<div class="rows" data-equalizer>
-	<section id="instragram" class="small-12 large-4 columns no-pad" data-equalizer-watch>
+<!-- <div class="rows" data-equalizer>
+	<section id="instragram" class="small-12 large-12 columns no-pad" data-equalizer-watch>
 		<div class="no-pad section-title section-title-instragram">
 			<span class="section-title-pad">#CUSE on Instragram</span>
 		</div>
 		<div class="instagram"></div>
 	</section>
+</div> -->
+
+<div class="rows" data-equalizer>
+	<div class="no-pad section-title section-title-event">
+		<span class="section-title-pad">Upcoming Event</span>
+	</div>
+	<section id="instragram" class="small-12 large-4 columns no-pad" data-equalizer-watch>
+
+	</section>
 
 	<section id="event" class="small-12 large-8 columns no-pad" data-equalizer-watch>
-		<div class="no-pad section-title section-title-event">
-			<span class="section-title-pad">Event</span>
-		</div>
+		<!-- <div class="no-pad section-title section-title-event">
+			<span class="section-title-pad">Upcoming Event</span>
+		</div> -->
 		<div class="relative-wrapper">
+			
+			<?php $event_archive_query = new WP_Query('showposts=10&post_type=tribe_events');
+			while ($event_archive_query->have_posts()) : $event_archive_query->the_post(); ?>
 
-			<!-- start event -->
 			<div class="event-item">
 				<time datetime="2014-09-20" class="icon">
-					<em>Saturday</em>
-					<strong>September</strong>
-					<span>20</span>
+					<em><?php echo tribe_get_start_date( null, false, 'l'); ?></em>
+					<strong><?php echo tribe_get_start_date( null, false, 'F'); ?></strong>
+					<span>
+						<?php echo tribe_get_start_date( null, false, 'd'); ?>
+					</span>
 				</time>
 				<div>
 					<div class="center">
-						<h4>This is the first event ever.</h4>
+						<h4>
+							<a href="<?php the_permalink() ?>" title="<?php the_title(); ?>">
+								<?php the_title(); ?>
+							</a>
+						</h4>
 					</div>
 				</div>
 			</div>
+
+			<?php endwhile; ?>
+			
 			<!-- end event -->
 
-			<!-- start event -->
-			<div class="event-item">
-				<time datetime="2014-09-20" class="icon">
-					<em>Saturday</em>
-					<strong>September</strong>
-					<span>20</span>
-				</time>
-				<div>
-					<div class="center">
-						<h4>This is the first event ever.</h4>
-					</div>
-				</div>
-			</div>
-			<!-- end event -->
-
-			<!-- start event -->
-			<div class="event-item">
-				<time datetime="2014-09-20" class="icon">
-					<em>Saturday</em>
-					<strong>September</strong>
-					<span>20</span>
-				</time>
-				<div>
-					<div class="center">
-						<h4>อยากจะดีกว่านี้ ให้เธอได้มั่นใจ</h4>
-					</div>
-				</div>
-			</div>
-			<!-- end event -->
-
-			<!-- start event -->
-			<div class="event-item">
-				<time datetime="2014-09-20" class="icon">
-					<em>Saturday</em>
-					<strong>September</strong>
-					<span>20</span>
-				</time>
-				<div>
-					<div class="center">
-						<a href="#"><h4>This is the first event ever.</h4></a>
-					</div>
-				</div>
-			</div>
-			<!-- end event -->
-
-			<!-- start event -->
-			<div class="event-item">
-				<time datetime="2014-09-20" class="icon">
-					<em>Saturday</em>
-					<strong>September</strong>
-					<span>20</span>
-				</time>
-				<div>
-					<div class="center">
-						<h4>This is the first event ever.</h4>
-					</div>
-				</div>
-			</div>
-			<!-- end event -->
-
-			<!-- start event -->
-			<div class="event-item">
-				<time datetime="2014-09-20" class="icon">
-					<em>Saturday</em>
-					<strong>September</strong>
-					<span>20</span>
-				</time>
-				<div>
-					<div class="center">
-						<h4>This is the first event ever.</h4>
-					</div>
-				</div>
-			</div>
-
+			
+			<?php if($event_archive_query->have_posts()): ?>
 			<div class="event-item">
 				<div class="center">
 					<a href="#"><h4><u>MORE</u></h4></a>
 				</div>
 			</div>
-			<!-- end event -->
-			
-			<!-- <div class="no-event text-center">
-				No event available.
-			</div> -->
+			<?php endif; ?>
+
+			<?php if(!$event_archive_query->have_posts()): ?>
+			<div class="event-item text-center">
+				<h4>No event available.</h4>
+			</div> 
+			<?php endif; ?>
+
 		</div>
 	</section>
 </div> 
