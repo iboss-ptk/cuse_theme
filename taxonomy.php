@@ -20,7 +20,7 @@
       array(
         'taxonomy' => 'tags',
         'field'    => 'slug',
-        'terms'    => 'บัณฑิตศึกษา',
+        'terms'    => roots_title(),
         ),
       ),);
 	$wp_query = new WP_Query($args);?>
