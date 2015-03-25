@@ -127,7 +127,7 @@
 
 			<?php if(!$event_archive_query->have_posts()): ?>
 			<div class="event-item text-center">
-				<h4>No event available.</h4>
+				<h4>There is no upcoming event.</h4>
 			</div> 
 			<?php endif; ?>
 			<div class="event-item">
