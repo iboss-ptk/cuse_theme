@@ -91,7 +91,6 @@
 		<span class="section-title-pad">Upcoming Event</span>
 	</div>
 	<section id="instragram" class="small-12 large-4 columns no-pad" data-equalizer-watch>
-
 	</section>
 
 	<section id="event" class="small-12 large-8 columns no-pad" data-equalizer-watch>
