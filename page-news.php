@@ -20,10 +20,12 @@
   <?php if ( $wp_query->have_posts() ) : ?>
   <div class="masonry js-masonry"  data-masonry-options='{ "isFitWidth": true }'>   
   <?php while ( $wp_query->have_posts() ) : $wp_query->the_post(); // Start the Loop.?>
-
+ 
+            
   <div class="post-card item">
     <a href=<?php the_permalink() ; ?>></a>
     <div class='post-card-cover'></div>
+    
     <div class="seperate">
       <div class="no-pad img-container">
                 <?php if ( has_post_thumbnail() ) {
@@ -33,6 +35,7 @@
         <h4><?php the_title(); ?></h4>
         <p><?php
             the_content(__('Read more','avia_framework'));?></p>
+         <p>  <?php echo get_the_term_list( $post->ID, 'tags', '<br>', '<br>', '' ); ?></p>
       </div>
     </div>
   </div>
