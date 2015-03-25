@@ -189,6 +189,14 @@
 </section>
 
 <div class="rows" data-equalizer>
+<<<<<<< HEAD
+=======
+	<div class="no-pad section-title section-title-event">
+		<span class="section-title-pad">Upcoming Event</span>
+	</div>
+	<section id="instragram" class="small-12 large-4 columns no-pad" data-equalizer-watch>
+	</section>
+>>>>>>> f210c569e0275d46a5bc0fa97a7aa2f4f33f515e
 
 	<section id="event" class="small-12 large-8 columns no-pad" data-equalizer-watch>
 		<div class="no-pad section-title section-title-event">
