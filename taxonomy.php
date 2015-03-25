@@ -15,7 +15,14 @@
 	$args = array(
 	"posts_per_page" =>12,
 	"post_type" => "news",
-	'paged'=>$paged);
+	'paged'=>$paged,
+    'tax_query' => array(
+      array(
+        'taxonomy' => 'tags',
+        'field'    => 'slug',
+        'terms'    => 'บัณฑิตศึกษา',
+        ),
+      ),);
 	$wp_query = new WP_Query($args);?>
   <?php if ( $wp_query->have_posts() ) : ?>
   <div class="masonry js-masonry"  data-masonry-options='{ "isFitWidth": true }'>   
