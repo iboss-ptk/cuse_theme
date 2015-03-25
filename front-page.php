@@ -40,9 +40,17 @@
 	<?php
 	$args = array(
 		'post_type' => 'news',
-		'posts_per_page' => 3,
+		'posts_per_page' => 1,
 		'orderby' => 'the_date',
-		'order' => 'ASC');	
+		'order' => 'ASC',
+		'tax_query' => array(
+	    array(
+	      'taxonomy' => 'tags',
+	      'field'    => 'slug',
+	      'terms'    => 'first',
+	    	),
+	  	),
+		);	
 	$wp_query = new WP_Query( $args );
 
 	?>
@@ -75,7 +83,98 @@
 		<?php else:  ?>
 		<p><?php _e( 'Sorry, no posts matched your criteria.' ); ?></p>
 	<?php endif; ?> 
+	<?php
+	$args = array(
+		'post_type' => 'news',
+		'posts_per_page' => 1,
+		'orderby' => 'the_date',
+		'order' => 'ASC',
+		'tax_query' => array(
+	    array(
+	      'taxonomy' => 'tags',
+	      'field'    => 'slug',
+	      'terms'    => 'second',
+	    	),
+	  	),
+		);	
+	$wp_query = new WP_Query( $args );
 
+	?>
+	<div class="rows card-group" data-equalizer>
+		<?php if ( $wp_query->have_posts() ) : ?>
+		<?php while ( $wp_query->have_posts() ) : $wp_query->the_post(); // Start the Loop.?>
+
+
+
+		<div class="post-card small-12 large-4 columns no-pad" data-equalizer-watch>
+			<a href=<?php the_permalink() ; ?>></a>
+			<div class='post-card-cover'></div>
+			<div class="seperate">
+				<div class="no-pad img-container">
+					<?php if ( has_post_thumbnail() ) {
+						the_post_thumbnail();} 						
+						?></div>
+						<div class="post-card-content small-offset-1 small-10">
+							<h4><?php the_title(); ?></h4>
+							<p><?php
+							the_content(__('Read more','avia_framework'));?></p>
+						</div>
+					</div>
+				</div>
+			<?php endwhile; ?>
+			<?php 
+	// clean up after our query
+			wp_reset_postdata(); 
+			?>
+		<?php else:  ?>
+		<p><?php _e( 'Sorry, no posts matched your criteria.' ); ?></p>
+	<?php endif; ?> 
+	<?php
+	$args = array(
+		'post_type' => 'news',
+		'posts_per_page' => 1,
+		'orderby' => 'the_date',
+		'order' => 'ASC',
+		'tax_query' => array(
+	    array(
+	      'taxonomy' => 'tags',
+	      'field'    => 'slug',
+	      'terms'    => 'second',
+	    	),
+	  	),
+		);	
+	$wp_query = new WP_Query( $args );
+
+	?>
+	<div class="rows card-group" data-equalizer>
+		<?php if ( $wp_query->have_posts() ) : ?>
+		<?php while ( $wp_query->have_posts() ) : $wp_query->the_post(); // Start the Loop.?>
+
+
+
+		<div class="post-card small-12 large-4 columns no-pad" data-equalizer-watch>
+			<a href=<?php the_permalink() ; ?>></a>
+			<div class='post-card-cover'></div>
+			<div class="seperate">
+				<div class="no-pad img-container">
+					<?php if ( has_post_thumbnail() ) {
+						the_post_thumbnail();} 						
+						?></div>
+						<div class="post-card-content small-offset-1 small-10">
+							<h4><?php the_title(); ?></h4>
+							<p><?php
+							the_content(__('Read more','avia_framework'));?></p>
+						</div>
+					</div>
+				</div>
+			<?php endwhile; ?>
+			<?php 
+	// clean up after our query
+			wp_reset_postdata(); 
+			?>
+		<?php else:  ?>
+		<p><?php _e( 'Sorry, no posts matched your criteria.' ); ?></p>
+	<?php endif; ?> 
 </section>
 <!-- <div class="rows" data-equalizer>
 	<section id="instragram" class="small-12 large-12 columns no-pad" data-equalizer-watch>
