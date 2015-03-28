@@ -3,27 +3,53 @@
 	<div id="header-label">
 		<div class="title-name">
 			<h1 style="color: white">Software Engineering</h1>
-			<p class="lv0">Department of Computer Engineering, Faculty of Engineering</p>
+			<p class="lv0">Master Program, Department of Computer Engineering, Faculty of Engineering</p>
 		</div>
 		
 		<p class="title-name">Chulalongkorn University</p>
-		<div class="nowop animated fadeInUp">
+		<div class="nowop animated fadeInUp" id="nowop">
 			<div class="announce-item">
 				<div id="arrow-left" class="arrow"></div>
+				<?php
+					$paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
+					$args = array(
+					"posts_per_page" =>10,
+					"post_type" => "announcement",
+					'orderby' => 'title',
+					'order' => 'ASC',
+					'paged'=>$paged);
+					$wp_query = new WP_Query($args);?>
+				  <?php if ( $wp_query->have_posts() ) : $i = 0;?>
+
+				  <?php while ( $wp_query->have_posts() ) : $wp_query->the_post(); if ($i==0) :// Start the Loop.?>
+
 				<div class="announce">
-					<p><u>NOW OPEN</u> from <i>Feb 2</i> to <i>March 10, 2015</i><br> for Software Engineering Program, Academic Year 1/2015</p>
-					<a href="<?php echo get_page_link(373) ?>" class="mif">MORE INFO</a>
+					<p><?php the_content();$i=1;?></p>
+					<?php  if (get_field('internal_link')): ?>
+					<a href="<?php the_field('internal_link');?>"  class="mif">MORE INFO</a>
+					<?php  elseif (get_field('external_link')): ?>
+					<a href="<?php the_field('external_link');?>"  class="mif">MORE INFO</a>
+					<?php endif; ?>
 				</div>
-
+				<?php else : ?>
 				<div class="announce hide">
-					<p><u>NOW OPEN 2</u> from <i>Feb 2</i> to <i>March 10, 2015</i><br> for Software Engineering Program, Academic Year 1/2015</p>
-					<a href="<?php echo get_page_link(373) ?>" class="mif">MORE INFO</a>
+					<p><?php the_content();?></p>
+					<?php  if (get_field('internal_link')): ?>
+					<a href="<?php the_field('internal_link');?>"  class="mif">MORE INFO</a>
+					<?php  elseif (get_field('external_link')): ?>
+					<a href="<?php the_field('external_link');?>"  class="mif">MORE INFO</a>
+					<?php endif; ?>
 				</div>
+				<?php endif; ?>
+				<?php endwhile; ?>
 
-				<div class="announce hide">
-					<p><u>NOW OPEN 3</u> from <i>Feb 2</i> to <i>March 10, 2015</i><br> for Software Engineering Program, Academic Year 1/2015</p>
-					<a href="<?php echo get_page_link(373) ?>" class="mif">MORE INFO</a>
-				</div>
+				  <?php 
+					// clean up after our query
+					wp_reset_postdata(); 
+				  ?>
+				<?php else:  ?>
+				<p><?php _e( 'Sorry, no posts matched your criteria.' ); ?></p>
+				<?php endif; ?>
 				<div id="arrow-right" class="arrow"></div>
 			</div>
 		</div>
@@ -34,7 +60,7 @@
 <section id="news">
 
 	<div class="small-12 no-pad section-title section-title-news rows">
-		<span class="section-title-pad small-1 columns">News</span>
+		<a href="<?php echo get_page_link(66) ?>"><span class="section-title-pad small-1 columns">News</span></a>
 	</div>	
 
 	<?php
@@ -139,7 +165,7 @@
 	    array(
 	      'taxonomy' => 'tags',
 	      'field'    => 'slug',
-	      'terms'    => 'second',
+	      'terms'    => 'third',
 	    	),
 	  	),
 		);	
@@ -176,26 +202,24 @@
 		<p><?php _e( 'Sorry, no posts matched your criteria.' ); ?></p>
 	<?php endif; ?> 
 </section>
-<!-- <div class="rows" data-equalizer>
-	<section id="instragram" class="small-12 large-12 columns no-pad" data-equalizer-watch>
+
+<section>
+<div class="rows" data-equalizer>
+	<section id="instragram" class="small-12 large-4 columns no-pad" data-equalizer-watch>
 		<div class="no-pad section-title section-title-instragram">
 			<span class="section-title-pad">#CUSE on Instragram</span>
 		</div>
 		<div class="instagram"></div>
 	</section>
-</div> -->
+</div>
+</section>
 
 <div class="rows" data-equalizer>
-	<div class="no-pad section-title section-title-event">
-		<span class="section-title-pad">Upcoming Event</span>
-	</div>
-	<section id="instragram" class="small-12 large-4 columns no-pad" data-equalizer-watch>
-	</section>
 
 	<section id="event" class="small-12 large-8 columns no-pad" data-equalizer-watch>
-		<!-- <div class="no-pad section-title section-title-event">
+		<div class="no-pad section-title section-title-event">
 			<span class="section-title-pad">Upcoming Event</span>
-		</div> -->
+		</div>
 		<div class="relative-wrapper">
 			
 			<?php $event_archive_query = new WP_Query('showposts=10&post_type=tribe_events');
@@ -221,31 +245,32 @@
 			</div>
 
 			<?php endwhile; ?>
+
 			
 			<!-- end event -->
 
-			
-			<?php if($event_archive_query->have_posts()): ?>
-			<div class="event-item">
-				<div class="center">
-					<a href="#"><h4><u>MORE</u></h4></a>
-				</div>
-			</div>
-			<?php endif; ?>
 
 			<?php if(!$event_archive_query->have_posts()): ?>
 			<div class="event-item text-center">
-				<h4>No event available.</h4>
+				<h4>There is no upcoming event.</h4>
 			</div> 
 			<?php endif; ?>
+			<div class="event-item">
+				<div class="center">
+					<a href="<?php echo get_page_link(70) ?>"><h4><u>View all</u></h4></a>
+				</div>
+			</div>
 
 		</div>
 	</section>
 </div> 
 
+
+
 <script type="text/javascript">
 	var arl = document.getElementById("arrow-left");
 	var arr = document.getElementById("arrow-right");
+	var nowop = document.getElementById("nowop");
 
 	var announce = document.getElementsByClassName("announce");
 	var max = announce.length;
@@ -260,18 +285,37 @@
 		return i
 	}
 
+	function trans(direction){
+		var prev_dirname = (direction === 0) ? "Right":"Left"
+		var next_dirname = (direction === 1) ? "Right":"Left"
+		announce[i].className = "announce fadeOut" + prev_dirname +" animated"
+		setTimeout(function(){
+			announce[i].className = "announce hide"
+			i = nav(i, max, direction);
+			announce[i].className = "announce fadeIn" + next_dirname +" animated"
+		},200);
+	}
+
+	var transTimer = setInterval(function(){ trans(1) }, 5000);
+
 	arl.addEventListener("click", function(){
-		announce[i].className = "announce hide"
-		i = nav(i, max, 0);
-		announce[i].className = "announce fadeIn"
-		// console.log(i);
+		trans(0);
+		clearInterval(transTimer);
 	});
 
 	arr.addEventListener("click", function(){
-		announce[i].className = "announce hide"
-		i = nav(i, max, 1);
-		announce[i].className = "announce fadeIn"
-		// console.log(i);
+		trans(1);
+		clearInterval(transTimer);
 	});
+
+	nowop.addEventListener("mouseover", function(){ 
+		clearInterval(transTimer); 
+	});
+
+	nowop.addEventListener("mouseout", function(){
+		transTimer = setInterval(function(){ trans(1) }, 5000);
+	});
+	
+
 
 </script>

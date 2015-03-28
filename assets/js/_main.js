@@ -81,7 +81,7 @@ var Roots = {
       });
       $('.instagram').instagram({
         // hashtag
-        hash: 'cityscape',
+        hash: 'intaniachula',
         clientId: '77995f907c4348909e35165138fd2e62'
       });
       

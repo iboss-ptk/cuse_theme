@@ -29,16 +29,22 @@
           echo $term_list;
       }
   ?>
- 
-<div class="news-container">
 
+<div class="news-container">
 <?php
 
 	$paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
 	$args = array(
 	"posts_per_page" =>12,
 	"post_type" => "news",
-	'paged'=>$paged);
+	'paged'=>$paged,
+    'tax_query' => array(
+      array(
+        'taxonomy' => 'tags',
+        'field'    => 'slug',
+        'terms'    => roots_title(),
+        ),
+      ),);
 	$wp_query = new WP_Query($args);?>
   <?php if ( $wp_query->have_posts() ) : ?>
   <div class="masonry js-masonry"  data-masonry-options='{ "isFitWidth": true }'>   

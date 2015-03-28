@@ -128,6 +128,13 @@
 
 .section-title-news {
   border-color: #F9690E;
+  a {
+    color: $thm-white;
+    text-decoration: underline;
+    &:hover {
+      color: $thm-lightgreen;
+    }
+  }
 }
 
 .section-title-instragram {
@@ -153,7 +160,7 @@
     max-height: 720px;
   }
   @media #{$large-up} {
-    min-height: 700px;
+    min-height: 0px;
   }
   position: relative;
   overflow: scroll;
@@ -201,6 +208,7 @@
   border-right: 1px solid $thm-lightgreen;
   -webkit-animation-delay: 1s; /* Chrome, Safari, Opera */
   animation-delay: 1s;
+  overflow: hidden;
 
   p {
     color: $thm-white;
@@ -278,6 +286,9 @@ time.icon span {
     border-left:3px solid $thm-white;
     border-bottom:3px solid $thm-white;
     transform: rotate(45deg);
+    &:hover {
+      border-color: $thm-lightgreen;
+    }
 }
 
 #arrow-right {
@@ -285,6 +296,9 @@ time.icon span {
     border-right:3px solid $thm-white;
     border-bottom:3px solid $thm-white;
     transform: rotate(-45deg);
+    &:hover {
+      border-color: $thm-lightgreen;
+    }
 }
 
 .announce-item {
