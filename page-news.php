@@ -68,9 +68,18 @@
   </div>
   
 <?php endwhile; ?>
+
 </div>
-<?php echo get_next_posts_link( 'Older Entries', $wp_query->max_num_pages ); ?>
-<?php echo get_previous_posts_link( 'Newer Entries' ); ?>
+ <!-- end of the loop -->
+
+    <!-- pagination here -->
+    <?php
+      
+        custom_pagination($wp_query->max_num_pages,2,$paged);
+    ?>
+
+<!--<?php echo get_next_posts_link( 'Older Entries', $wp_query->max_num_pages ); ?>
+<?php echo get_previous_posts_link( 'Newer Entries' ); ?>-->
 
   <?php 
 	// clean up after our query
