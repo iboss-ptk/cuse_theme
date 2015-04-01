@@ -3,21 +3,23 @@
   <div class="small-12 large-10 large-offset-1 paper-like-content-wrapper asplalt">
     <article <?php post_class(); ?>>
       <header class='news-header'>
-        <h1 class="entry-title"><?php the_field('name'); ?></h1>
+        <h1 class="entry-title">
+          <!-- <b>Research:</b> --> <?php the_field('name'); ?>
+        </h1>
         <?php if ( has_post_thumbnail() ) {
           the_post_thumbnail();}
           ?>
       </header>
         <div class="entry-content">
           <h4 >Description: </h4><hr>
-          <div class="item-content" style="padding-bottom:2em;"><?php the_field('description'); ?> <br><br></div>
+          <div class="item-content"><?php the_field('description'); ?></div>
 
           <h4>Student information: </h4><hr>
-           <div class="item-content" style="padding-bottom:2em;"><?php the_field('student_info'); ?>  <br><br></div>
+           <div class="item-content"><?php the_field('student_name'); ?></div>
           <h4>Advisor: </h4><hr>
-           <div class="item-content" style="padding-bottom:2em;"><?php the_field('adviser_info'); ?> <br><br></div>
+           <div class="item-content"><?php the_field('adviser_name'); ?></div>
           <h4>Year:</h4><hr>
-           <div class="item-content" style="padding-bottom:2em;"><?php the_field('year'); ?><br><br></div>
+           <div class="item-content"><?php the_field('year'); ?></div>
 
         </div>
         <footer>

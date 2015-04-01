@@ -41,6 +41,10 @@ function roots_scripts() {
     wp_enqueue_script('masonry');
     wp_enqueue_script('news');
   }
+
+  if( is_page('research-topic') ) {
+    wp_enqueue_script('masonry');
+  }
   
 
   // another js file
