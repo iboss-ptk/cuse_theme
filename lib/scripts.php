@@ -42,6 +42,9 @@ function roots_scripts() {
     wp_enqueue_script('news');
   }
   
+  if( taxonomy_exists('post_tag') ) {
+     wp_enqueue_script('masonry');
+  }
 
   // another js file
   if( is_page( 'subject' )){
