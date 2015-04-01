@@ -5,6 +5,7 @@
     <?php get_template_part('templates/page', 'header'); ?>
     </div>
 
+<<<<<<< HEAD
 <div class="search">
   <form role="search" method="get" class="search" action="http://cuse.dev/">
     <div class="row">
@@ -23,9 +24,35 @@
   </form>
   <!-- <?php get_search_form() ?> -->
 </div>
+=======
+<div class="search"><?php get_search_form() ?></div>
+<?php 
+         $args = array( 'orderby'    => 'count','order' => 'DESC','hide_empty=0','number' =>'10'  );
+>>>>>>> efac983652e5aa89220a7b4a856a42e958989391
 
-
+      $terms = get_terms( 'tags', $args );
+      if ( ! empty( $terms ) && ! is_wp_error( $terms ) ) {
+          $count = count( $terms );
+          $i = 0;
+          $term_list = '<p class="news-archive">';
+          foreach ( $terms as $term ) {
+              $i++;
+            if($term->name!="First"&&$term->name!="Second"&&$term->name!="Third"){
+                $term_list .= '<a href="' . get_term_link( $term ) . '" title="' . sprintf( __( 'View all news filed under %s', 'my_localization_domain' ), $term->name ) . '">' . $term->name . '</a>';
+                if ( $count != $i ) {
+                      $term_list .= ' ';
+                  }
+                  else {
+                      $term_list .= '</p>';
+                  }
+              }
+          }
+          echo $term_list;
+      }
+  ?>
+ 
 <div class="news-container">
+
 <?php
 
 	$paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
@@ -62,9 +89,18 @@
   </div>
   
 <?php endwhile; ?>
+
 </div>
-<?php echo get_next_posts_link( 'Older Entries', $wp_query->max_num_pages ); ?>
-<?php echo get_previous_posts_link( 'Newer Entries' ); ?>
+ <!-- end of the loop -->
+
+    <!-- pagination here -->
+    <?php
+      
+        custom_pagination($wp_query->max_num_pages,2,$paged);
+    ?>
+
+<!--<?php echo get_next_posts_link( 'Older Entries', $wp_query->max_num_pages ); ?>
+<?php echo get_previous_posts_link( 'Newer Entries' ); ?>-->
 
   <?php 
 	// clean up after our query

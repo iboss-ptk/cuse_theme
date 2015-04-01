@@ -6,7 +6,29 @@
     </div>
 
 <div class="search"><?php get_search_form() ?></div>
+<?php 
+         $args = array( 'orderby'    => 'count','order' => 'DESC','hide_empty=0','number' =>'10'  );
 
+      $terms = get_terms( 'tags', $args );
+      if ( ! empty( $terms ) && ! is_wp_error( $terms ) ) {
+          $count = count( $terms );
+          $i = 0;
+          $term_list = '<p class="news-archive">';
+          foreach ( $terms as $term ) {
+              $i++;
+            if($term->name!="First"&&$term->name!="Second"&&$term->name!="Third"){
+                $term_list .= '<a href="' . get_term_link( $term ) . '" title="' . sprintf( __( 'View all news filed under %s', 'my_localization_domain' ), $term->name ) . '">' . $term->name . '</a>';
+                if ( $count != $i ) {
+                      $term_list .= ' ';
+                  }
+                  else {
+                      $term_list .= '</p>';
+                  }
+              }
+          }
+          echo $term_list;
+      }
+  ?>
 
 <div class="news-container">
 <?php
