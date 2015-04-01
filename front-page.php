@@ -60,6 +60,7 @@
 <section id="news">
 
 	<div class="small-12 no-pad section-title section-title-news rows">
+
 		<a href="<?php echo get_page_link(66) ?>"><span class="section-title-pad small-1 columns">News</span></a>
 	</div>	
 
@@ -80,8 +81,9 @@
 	$wp_query = new WP_Query( $args );
 
 	?>
-	<div class="rows card-group" data-equalizer>
+		<div class="rows" data-equalizer>
 		<?php if ( $wp_query->have_posts() ) : ?>
+
 		<?php while ( $wp_query->have_posts() ) : $wp_query->the_post(); // Start the Loop.?>
 
 
@@ -92,129 +94,135 @@
 			<div class="seperate">
 				<div class="no-pad img-container">
 					<?php if ( has_post_thumbnail() ) {
-						the_post_thumbnail();} 						
-						?></div>
-						<div class="post-card-content small-offset-1 small-10">
-							<h4><?php the_title(); ?></h4>
-							<p><?php
-							the_content(__('Read more','avia_framework'));?></p>
-						</div>
-					</div>
+						the_post_thumbnail();
+					} 						
+					?>
 				</div>
-			<?php endwhile; ?>
-			<?php 
-	// clean up after our query
-			wp_reset_postdata(); 
-			?>
-		<?php else:  ?>
-		<p><?php _e( 'Sorry, no posts matched your criteria.' ); ?></p>
-	<?php endif; ?> 
-	<?php
-	$args = array(
-		'post_type' => 'news',
-		'posts_per_page' => 1,
-		'orderby' => 'the_date',
-		'order' => 'ASC',
-		'tax_query' => array(
-	    array(
-	      'taxonomy' => 'tags',
-	      'field'    => 'slug',
-	      'terms'    => 'second',
-	    	),
-	  	),
-		);	
-	$wp_query = new WP_Query( $args );
+				<div class="post-card-content small-offset-1 small-10">
+					<h4><?php the_title(); ?></h4>
+					<p><?php
+					the_content(__('Read more','avia_framework'));?></p>
+				</div>
+			</div>
+		</div>
+	<?php endwhile; ?>
 
+	<?php 
+	// clean up after our query
+	wp_reset_postdata(); 
 	?>
-	<div class="rows card-group" data-equalizer>
-		<?php if ( $wp_query->have_posts() ) : ?>
-		<?php while ( $wp_query->have_posts() ) : $wp_query->the_post(); // Start the Loop.?>
+<?php else:  ?>
+	<p><?php _e( 'Sorry, no posts matched your criteria.' ); ?></p>
+<?php endif; ?> 
+<?php
+$args = array(
+	'post_type' => 'news',
+	'posts_per_page' => 1,
+	'orderby' => 'the_date',
+	'order' => 'ASC',
+	'tax_query' => array(
+		array(
+			'taxonomy' => 'tags',
+			'field'    => 'slug',
+			'terms'    => 'second',
+			),
+		),
+	);	
+$wp_query = new WP_Query( $args );
+
+?>
+
+<?php if ( $wp_query->have_posts() ) : ?>
+	<?php while ( $wp_query->have_posts() ) : $wp_query->the_post(); // Start the Loop.?>
 
 
 
-		<div class="post-card small-12 large-4 columns no-pad" data-equalizer-watch>
-			<a href=<?php the_permalink() ; ?>></a>
-			<div class='post-card-cover'></div>
-			<div class="seperate">
-				<div class="no-pad img-container">
-					<?php if ( has_post_thumbnail() ) {
-						the_post_thumbnail();} 						
-						?></div>
-						<div class="post-card-content small-offset-1 small-10">
-							<h4><?php the_title(); ?></h4>
-							<p><?php
-							the_content(__('Read more','avia_framework'));?></p>
-						</div>
+	<div class="post-card small-12 large-4 columns no-pad" data-equalizer-watch>
+		<a href=<?php the_permalink() ; ?>></a>
+		<div class='post-card-cover'></div>
+		<div class="seperate">
+			<div class="no-pad img-container">
+				<?php if ( has_post_thumbnail() ) {
+					the_post_thumbnail();} 						
+					?></div>
+					<div class="post-card-content small-offset-1 small-10">
+						<h4><?php the_title(); ?></h4>
+						<p><?php
+						the_content(__('Read more','avia_framework'));?></p>
 					</div>
 				</div>
-			<?php endwhile; ?>
-			<?php 
+			</div>
+		<?php endwhile; ?>
+		<?php 
 	// clean up after our query
-			wp_reset_postdata(); 
-			?>
-		<?php else:  ?>
-		<p><?php _e( 'Sorry, no posts matched your criteria.' ); ?></p>
-	<?php endif; ?> 
-	<?php
-	$args = array(
-		'post_type' => 'news',
-		'posts_per_page' => 1,
-		'orderby' => 'the_date',
-		'order' => 'ASC',
-		'tax_query' => array(
-	    array(
-	      'taxonomy' => 'tags',
-	      'field'    => 'slug',
-	      'terms'    => 'third',
-	    	),
-	  	),
-		);	
-	$wp_query = new WP_Query( $args );
+		wp_reset_postdata(); 
+		?>
+	<?php else:  ?>
+	<p><?php _e( 'Sorry, no posts matched your criteria.' ); ?></p>
+<?php endif; ?> 
+<?php
+$args = array(
+	'post_type' => 'news',
+	'posts_per_page' => 1,
+	'orderby' => 'the_date',
+	'order' => 'ASC',
+	'tax_query' => array(
+		array(
+			'taxonomy' => 'tags',
+			'field'    => 'slug',
+			'terms'    => 'third',
+			),
+		),
+	);	
+$wp_query = new WP_Query( $args );
 
+?>
+
+<?php if ( $wp_query->have_posts() ) : ?>
+	<?php while ( $wp_query->have_posts() ) : $wp_query->the_post(); // Start the Loop.?>
+
+
+
+	<div class="post-card small-12 large-4 columns no-pad" data-equalizer-watch>
+		<a href=<?php the_permalink() ; ?>></a>
+		<div class='post-card-cover'></div>
+		<div class="seperate">
+			<div class="no-pad img-container">
+				<?php if ( has_post_thumbnail() ) {
+					the_post_thumbnail();} 						
+					?>
+				</div>
+				<div class="post-card-content small-offset-1 small-10" >
+					<h4><?php the_title(); ?></h4>
+					<p><?php
+					the_content(__('Read more','avia_framework'));?></p>
+				</div>
+			</div>
+		</div>
+	<?php endwhile; ?>
+	<?php 
+	// clean up after our query
+	wp_reset_postdata(); 
 	?>
-	<div class="rows card-group" data-equalizer>
-		<?php if ( $wp_query->have_posts() ) : ?>
-		<?php while ( $wp_query->have_posts() ) : $wp_query->the_post(); // Start the Loop.?>
-
-
-
-		<div class="post-card small-12 large-4 columns no-pad" data-equalizer-watch>
-			<a href=<?php the_permalink() ; ?>></a>
-			<div class='post-card-cover'></div>
-			<div class="seperate">
-				<div class="no-pad img-container">
-					<?php if ( has_post_thumbnail() ) {
-						the_post_thumbnail();} 						
-						?></div>
-						<div class="post-card-content small-offset-1 small-10">
-							<h4><?php the_title(); ?></h4>
-							<p><?php
-							the_content(__('Read more','avia_framework'));?></p>
-						</div>
-					</div>
-				</div>
-			<?php endwhile; ?>
-			<?php 
-	// clean up after our query
-			wp_reset_postdata(); 
-			?>
-		<?php else:  ?>
-		<p><?php _e( 'Sorry, no posts matched your criteria.' ); ?></p>
-	<?php endif; ?> 
+</div>
+<?php else:  ?>
+	<p><?php _e( 'Sorry, no posts matched your criteria.' ); ?></p>
+<?php endif; ?> 
 </section>
 
 <section>
-<div class="rows" data-equalizer>
-	<section id="instragram" class="small-12 large-4 columns no-pad" data-equalizer-watch>
-		<div class="no-pad section-title section-title-instragram">
-			<span class="section-title-pad">#CUSE on Instragram</span>
-		</div>
-		<div class="instagram"></div>
-	</section>
-</div>
+	<div class="rows" data-equalizer>
+		<section id="instragram" class="small-12 large-4 columns no-pad" data-equalizer-watch>
+			<div class="no-pad section-title section-title-instragram">
+				<span class="section-title-pad">#CUSE on Instragram</span>
+			</div>
+			<div class="instagram"></div>
+		</section>
+	</div>
 </section>
 
 <div class="rows" data-equalizer>
+
 
 	<section id="event" class="small-12 large-8 columns no-pad" data-equalizer-watch>
 		<div class="no-pad section-title section-title-event">
@@ -244,10 +252,10 @@
 				</div>
 			</div>
 
-			<?php endwhile; ?>
+		<?php endwhile; ?>
 
-			
-			<!-- end event -->
+
+		<!-- end event -->
 
 
 			<?php if(!$event_archive_query->have_posts()): ?>
@@ -257,65 +265,66 @@
 			<?php endif; ?>
 			<div class="event-item">
 				<div class="center">
-					<a href="<?php echo get_page_link(70) ?>"><h4><u>View all</u></h4></a>
+					<a href="<?php echo "events" ?>"><h4><u>View all</u></h4></a>
 				</div>
 			</div>
 
-		</div>
-	</section>
+
+</div>
+</section>
 </div> 
 
 
 
 <script type="text/javascript">
-	var arl = document.getElementById("arrow-left");
-	var arr = document.getElementById("arrow-right");
-	var nowop = document.getElementById("nowop");
+var arl = document.getElementById("arrow-left");
+var arr = document.getElementById("arrow-right");
+var nowop = document.getElementById("nowop");
 
-	var announce = document.getElementsByClassName("announce");
-	var max = announce.length;
-	var i = 0;
+var announce = document.getElementsByClassName("announce");
+var max = announce.length;
+var i = 0;
 
-	function nav (i, max, dir) {
-		if (dir == 1) { i++ }
-		else if (dir == 0) { i-- };
+function nav (i, max, dir) {
+	if (dir == 1) { i++ }
+	else if (dir == 0) { i-- };
 
-		if (i >= max) { return 0 };
-		if (i < 0) { return max-1 };
-		return i
-	}
+	if (i >= max) { return 0 };
+	if (i < 0) { return max-1 };
+	return i
+}
 
-	function trans(direction){
-		var prev_dirname = (direction === 0) ? "Right":"Left"
-		var next_dirname = (direction === 1) ? "Right":"Left"
-		announce[i].className = "announce fadeOut" + prev_dirname +" animated"
-		setTimeout(function(){
-			announce[i].className = "announce hide"
-			i = nav(i, max, direction);
-			announce[i].className = "announce fadeIn" + next_dirname +" animated"
-		},200);
-	}
+function trans(direction){
+	var prev_dirname = (direction === 0) ? "Right":"Left"
+	var next_dirname = (direction === 1) ? "Right":"Left"
+	announce[i].className = "announce fadeOut" + prev_dirname +" animated"
+	setTimeout(function(){
+		announce[i].className = "announce hide"
+		i = nav(i, max, direction);
+		announce[i].className = "announce fadeIn" + next_dirname +" animated"
+	},200);
+}
 
-	var transTimer = setInterval(function(){ trans(1) }, 5000);
+var transTimer = setInterval(function(){ trans(1) }, 5000);
 
-	arl.addEventListener("click", function(){
-		trans(0);
-		clearInterval(transTimer);
-	});
+arl.addEventListener("click", function(){
+	trans(0);
+	clearInterval(transTimer);
+});
 
-	arr.addEventListener("click", function(){
-		trans(1);
-		clearInterval(transTimer);
-	});
+arr.addEventListener("click", function(){
+	trans(1);
+	clearInterval(transTimer);
+});
 
-	nowop.addEventListener("mouseover", function(){ 
-		clearInterval(transTimer); 
-	});
+nowop.addEventListener("mouseover", function(){ 
+	clearInterval(transTimer); 
+});
 
-	nowop.addEventListener("mouseout", function(){
-		transTimer = setInterval(function(){ trans(1) }, 5000);
-	});
-	
+nowop.addEventListener("mouseout", function(){
+	transTimer = setInterval(function(){ trans(1) }, 5000);
+});
+
 
 
 </script>
