@@ -5,30 +5,48 @@
     <?php get_template_part('templates/page', 'header'); ?>
     </div>
 
-<div class="search"><?php get_search_form() ?></div>
-<?php 
-         $args = array( 'orderby'    => 'count','order' => 'DESC','hide_empty=0','number' =>'10'  );
-
+<div class="search">
+      <form role="search" method="get" class="search" action="http://cuse.dev/">
+        <div class="row">
+          <div class="small-12 columns">
+            <div class="row collapse">
+              <div class="small-8 columns">
+                <input type="hidden" name="post_type" value="news" />
+                <input type="text" value="" name="s" placeholder="Enter the keywords...">
+              </div>
+              <div class="small-4 columns">
+                <button type="submit" class="button expand postfix">Search</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </form>
+      <!-- <?php get_search_form() ?> -->
+    </div>
+    <div class="text-center">
+      <?php 
+      $args = array( 'orderby'    => 'count','order' => 'DESC','hide_empty=0','number' =>'10'  );
       $terms = get_terms( 'tags', $args );
       if ( ! empty( $terms ) && ! is_wp_error( $terms ) ) {
-          $count = count( $terms );
-          $i = 0;
-          $term_list = '<p class="news-archive">';
-          foreach ( $terms as $term ) {
-              $i++;
-            if($term->name!="First"&&$term->name!="Second"&&$term->name!="Third"){
-                $term_list .= '<a href="' . get_term_link( $term ) . '" title="' . sprintf( __( 'View all news filed under %s', 'my_localization_domain' ), $term->name ) . '">' . $term->name . '</a>';
-                if ( $count != $i ) {
-                      $term_list .= ' ';
-                  }
-                  else {
-                      $term_list .= '</p>';
-                  }
-              }
+        $count = count( $terms );
+        $i = 0;
+        $term_list = '<p class="news-archive" style="margin-top:50px">';
+        foreach ( $terms as $term ) {
+          $i++;
+          if($term->name!="First"&&$term->name!="Second"&&$term->name!="Third"){
+            $term_list .= '<a style="border: 1px solid #8f131a; padding: 5px 5px; padding-top: 8px;" href="' . get_term_link( $term ) . '" title="' . sprintf( __( 'View all news filed under %s', 'my_localization_domain' ), $term->name ) . '">' . $term->name . '</a>';
+            if ( $count != $i ) {
+              $term_list .= ' ';
+            }
+            else {
+              $term_list .= '</p>';
+            }
           }
-          echo $term_list;
+        }
+        echo $term_list;
       }
-  ?>
+      ?>
+    </div>
 
 <div class="news-container">
 <?php

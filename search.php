@@ -23,41 +23,31 @@
       </form>
       <!-- <?php get_search_form() ?> -->
     </div>
-    <div class="text-center">
-      <?php 
-      $args = array( 'orderby'    => 'count','order' => 'DESC','hide_empty=0','number' =>'10'  );
-      $terms = get_terms( 'tags', $args );
-      if ( ! empty( $terms ) && ! is_wp_error( $terms ) ) {
-        $count = count( $terms );
-        $i = 0;
-        $term_list = '<p class="news-archive" style="margin-top:50px">';
-        foreach ( $terms as $term ) {
-          $i++;
-          if($term->name!="First"&&$term->name!="Second"&&$term->name!="Third"){
-            $term_list .= '<a style="border: 1px solid #8f131a; padding: 5px 5px; padding-top: 8px;" href="' . get_term_link( $term ) . '" title="' . sprintf( __( 'View all news filed under %s', 'my_localization_domain' ), $term->name ) . '">' . $term->name . '</a>';
-            if ( $count != $i ) {
-              $term_list .= ' ';
-            }
-            else {
-              $term_list .= '</p>';
-            }
-          }
-        }
-        echo $term_list;
-      }
-      ?>
-    </div>
  
 <div class="news-container">
 
 <?php
 
 	$paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
-	$args = array(
-	"posts_per_page" =>12,
-	"post_type" => "news",
-	'paged'=>$paged);
-	$wp_query = new WP_Query($args);?>
+	// $args = array(
+	// "posts_per_page" =>12,
+	// "post_type" => "news",
+	// 'paged'=>$paged);
+	// $wp_query = new WP_Query($args);
+
+  global $query_string;
+
+  $query_args = explode("&", $query_string);
+  $search_query = array();
+
+  foreach($query_args as $key => $string) {
+    $query_split = explode("=", $string);
+    $search_query[$query_split[0]] = urldecode($query_split[1]);
+  } // foreach
+
+  $search = new WP_Query($search_query);
+
+  ?>
   <?php if ( $wp_query->have_posts() ) : ?>
   <div class="masonry js-masonry"  data-masonry-options='{ "isFitWidth": true }'>   
   <?php while ( $wp_query->have_posts() ) : $wp_query->the_post(); // Start the Loop.?>
@@ -104,7 +94,7 @@
 	wp_reset_postdata(); 
   ?>
 <?php else:  ?>
-<p><?php _e( 'Sorry, no posts matched your criteria.' ); ?></p>
+<p class="text-center" style="margin-top:-200px;"><?php _e( 'Sorry, no posts matched your criteria.' ); ?></p>
 <?php endif; ?>
 </div>
 </div>
