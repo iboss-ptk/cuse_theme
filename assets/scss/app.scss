@@ -38,7 +38,7 @@ Import Roots Components - Do your SASS awesomeness here! Goodspeed young travele
 @import "layouts/pages/_overview";   // overview page styling
 @import "layouts/_posts";            // Post styling
 @import "layouts/_table";			//modify table
-
+@import "layouts/pages/_research";			//modify table
 /*==========  Foundation Media Queries - copy/paste from here if needed  ==========*/
 
 @media #{$small-up} { }

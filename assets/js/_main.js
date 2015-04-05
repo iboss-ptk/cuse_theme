@@ -73,7 +73,8 @@ var Roots = {
             if ( igfeed[i].images !== undefined ) { 
               var imgurl = igfeed[i].images.standard_resolution.url;
               // console.log("image");
-              // console.log(igfeed[i]);
+              console.log(igfeed[i].link + " / " +imgurl);
+
               $('.instagram').append("<a href='" + igfeed[i].link + "' target='_blank'><img class='small-6 no-pad' id='"+ igfeed[i].id +"' src = '" + imgurl + "'></img></a>")
             }
             else if ( igfeed[i].video !== undefined ) console.log("video");
@@ -81,7 +82,7 @@ var Roots = {
       });
       $('.instagram').instagram({
         // hashtag
-        hash: 'intaniachula',
+        hash: 'chula',
         clientId: '77995f907c4348909e35165138fd2e62'
       });
       

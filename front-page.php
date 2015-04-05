@@ -69,7 +69,7 @@
 		'post_type' => 'news',
 		'posts_per_page' => 1,
 		'orderby' => 'the_date',
-		'order' => 'ASC',
+		'order' => 'DESC',
 		'tax_query' => array(
 	    array(
 	      'taxonomy' => 'tags',
@@ -214,7 +214,9 @@ $wp_query = new WP_Query( $args );
 	<div class="rows" data-equalizer>
 		<section id="instragram" class="small-12 large-4 columns no-pad" data-equalizer-watch>
 			<div class="no-pad section-title section-title-instragram">
-				<span class="section-title-pad">#CUSE on Instragram</span>
+				<span class="section-title-pad">#CUSE on Instragram 
+					<?php if (is_user_logged_in()): ?>(<a href="<?php echo get_page_link(612) ?>">manage</a>)<?php endif ?>
+				</span>
 			</div>
 			<div class="instagram"></div>
 		</section>
@@ -265,7 +267,7 @@ $wp_query = new WP_Query( $args );
 			<?php endif; ?>
 			<div class="event-item">
 				<div class="center">
-					<a href="<?php echo "events" ?>"><h4><u>View all</u></h4></a>
+					<a href="<?php echo "eventss" ?>"><h4><u>View all</u></h4></a>
 				</div>
 			</div>
 
@@ -324,7 +326,6 @@ nowop.addEventListener("mouseover", function(){
 nowop.addEventListener("mouseout", function(){
 	transTimer = setInterval(function(){ trans(1) }, 5000);
 });
-
 
 
 </script>

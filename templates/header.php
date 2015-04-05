@@ -5,11 +5,11 @@
       <ul class="title-area">
         <!-- <li class="name"> <h1><a href="<?php echo esc_url(home_url()); ?>"><?php bloginfo('name'); ?></a></h1> </li> -->
         <li class="name"> <h1><a href="<?php echo esc_url(home_url()).'/'; ?>">
-            <img src="http://www.cp.eng.chula.ac.th/se/app/themes/cuse_theme/assets/img/logo.png" width="40" height="40">
-            <div class="header-title">
+            <img src="http://cuse.dev/app/themes/cuse_theme/assets/img/ce.png" width="220" style="margin-top:0px;">
+<!--             <div class="header-title">
               <div class="se">Software Engineering</div>
               <div class="cu">Chulalongkorn University</div>
-            </div>  
+            </div>   -->
         </a></h1> </li>
         <li class="toggle-topbar menu-icon"><a href="#"><span></span></a></li>
       </ul>
