@@ -9,7 +9,9 @@
           ?>
         </header>
         <div class="entry-content">
+          <?php echo get_the_date( 'F d, Y' ); ?>
           <?php the_content();?>
+           <p>  <?php echo get_the_term_list( $post->ID, 'tags', '<b>tags:</b> ', ', ', '' ); ?></p>
         </div>
         <footer>
           <?php wp_link_pages(array('before' => '<p><strong>'.__('Pages:', 'framework').'</strong> ', 'after' => '</p>', 'next_or_number' => 'number')); ?>

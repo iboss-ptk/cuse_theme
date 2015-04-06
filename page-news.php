@@ -5,30 +5,10 @@
     <?php get_template_part('templates/page', 'header'); ?>
     </div>
 
-<<<<<<< HEAD
-<div class="search">
-  <form role="search" method="get" class="search" action="http://cuse.dev/">
-    <div class="row">
-      <div class="small-12 columns">
-        <div class="row collapse">
-          <div class="small-8 columns">
-            <input type="hidden" name="post_type" value="news" />
-            <input type="text" value="" name="s" placeholder="Enter the keywords...">
-          </div>
-          <div class="small-4 columns">
-            <button type="submit" class="button expand postfix">Search</button>
-          </div>
-        </div>
-      </div>
-    </div>
-  </form>
-  <!-- <?php get_search_form() ?> -->
-</div>
-=======
+
 <div class="search"><?php get_search_form() ?></div>
 <?php 
          $args = array( 'orderby'    => 'count','order' => 'DESC','hide_empty=0','number' =>'10'  );
->>>>>>> efac983652e5aa89220a7b4a856a42e958989391
 
       $terms = get_terms( 'tags', $args );
       if ( ! empty( $terms ) && ! is_wp_error( $terms ) ) {
