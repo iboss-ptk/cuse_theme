@@ -14,7 +14,7 @@
           <h4 >Description: </h4><hr>
           <div class="item-content"><?php the_field('description'); ?></div>
 
-          <h4>Student information: </h4><hr>
+          <h4>Student: </h4><hr>
            <div class="item-content"><?php the_field('student_name'); ?></div>
           <h4>Advisor: </h4><hr>
            <div class="item-content"><?php the_field('adviser_name'); ?></div>

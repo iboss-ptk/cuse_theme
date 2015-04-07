@@ -47,6 +47,66 @@ unset($file, $filepath);
 // Hides the iCal/Export Listed Events link from tribe archive views such as List and Month
 remove_filter('tribe_events_after_footer', array('TribeiCal', 'maybe_add_link'), 10, 1);
 
+function igadmin_create_db() {
+    global $wpdb;
+    $charset_collate = $wpdb->get_charset_collate();
+    $table_name = $wpdb->prefix . 'igadmin';
+
+    $sql = "CREATE TABLE $table_name (
+      id mediumint(9) NOT NULL AUTO_INCREMENT,
+      igid varchar(255) NOT NULL,
+      imgurl varchar(255) NOT NULL,
+      link varchar(255) NOT NULL,
+      UNIQUE KEY id (id)
+    ) $charset_collate;";
+
+    $wpdb->query($sql);
+}
+
+add_action("after_switch_theme", "igadmin_create_db");
+
+add_action( 'wp_ajax_igadmin_add_new_allowed', 'igadmin_add_new_allowed_callback' );
+function igadmin_add_new_allowed_callback() {
+    global $wpdb;
+    $ig_post_id = $_POST['ig_post_id'];
+    $ig_image = $_POST['imgurl'];
+    $ig_link = $_POST['link'];
+
+    $table_name = $wpdb->prefix . 'igadmin';
+    $sql = "INSERT INTO $table_name (igid, imgurl, link) VALUES ( '$ig_post_id', '$ig_image', '$ig_link' )";
+
+    $wpdb->query($sql);
+
+    echo "STORE ".$ig_post_id . ': ' . $ig_image;
+    wp_die();
+}
+
+add_action( 'wp_ajax_igadmin_remove_allowed', 'igadmin_remove_allowed_callback' );
+function igadmin_remove_allowed_callback() {
+    global $wpdb;
+    $ig_post_id = intval( $_POST['ig_post_id'] );
+
+    $table_name = $wpdb->prefix . 'igadmin';
+    $sql = "DELETE FROM $table_name WHERE igid=$ig_post_id";
+    $wpdb->query($sql);
+
+    echo "REMOVE ".$ig_post_id;
+    wp_die();
+}
+
+add_action( 'wp_ajax_find_allowed', 'find_allowed_callback' );
+function find_allowed_callback() {
+    global $wpdb;
+    $ig_post_id = intval( $_GET['ig_post_id'] );
+
+    $table_name = $wpdb->prefix . 'igadmin';
+    $sql = "SELECT 1 FROM $table_name WHERE igid=$ig_post_id";
+    $res = $wpdb->query($sql);
+
+    if($res == 1) echo True;
+    // echo $ig_post_id . "is allowed";
+    wp_die();
+}
 
 function custom_pagination($numpages = '', $pagerange = '', $paged='') {
 

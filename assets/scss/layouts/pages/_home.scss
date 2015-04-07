@@ -283,8 +283,6 @@ time.icon span {
 
 #arrow-left {
     left: 1%;
-    border-left:3px solid $thm-white;
-    border-bottom:3px solid $thm-white;
     transform: rotate(45deg);
     &:hover {
       border-color: $thm-lightgreen;
@@ -293,9 +291,7 @@ time.icon span {
 
 #arrow-right {
     right: 1%;
-    border-right:3px solid $thm-white;
-    border-bottom:3px solid $thm-white;
-    transform: rotate(-45deg);
+    transform: rotate(-135deg);
     &:hover {
       border-color: $thm-lightgreen;
     }
@@ -309,6 +305,8 @@ time.icon span {
   }
   .arrow {
     position: absolute;
+    border-left:3px solid $thm-white;
+    border-bottom:3px solid $thm-white;
     top: 35%;
     width:20px;
     height:20px;

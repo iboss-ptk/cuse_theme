@@ -9,7 +9,6 @@
 		<p class="title-name">Chulalongkorn University</p>
 		<div class="nowop animated fadeInUp" id="nowop">
 			<div class="announce-item">
-				<div id="arrow-left" class="arrow"></div>
 				<?php
 					$paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
 					$args = array(
@@ -50,6 +49,7 @@
 				<?php else:  ?>
 				<p><?php _e( 'Sorry, no posts matched your criteria.' ); ?></p>
 				<?php endif; ?>
+				<div id="arrow-left" class="arrow"></div>
 				<div id="arrow-right" class="arrow"></div>
 			</div>
 		</div>
@@ -214,11 +214,22 @@ $wp_query = new WP_Query( $args );
 	<div class="rows" data-equalizer>
 		<section id="instragram" class="small-12 large-4 columns no-pad" data-equalizer-watch>
 			<div class="no-pad section-title section-title-instragram">
-				<span class="section-title-pad">#CUSE on Instragram 
-					<?php if (is_user_logged_in()): ?>(<a href="<?php echo get_page_link(612) ?>">manage</a>)<?php endif ?>
+				<span class="section-title-pad">#ChulaSE on Instragram 
+					<?php if (is_user_logged_in()): ?>(<a href="<?php echo get_page_link(601) ?>">manage</a>)<?php endif ?>
 				</span>
 			</div>
-			<div class="instagram"></div>
+			<div class="instagram">
+				<?php
+					global $wpdb;
+					$table_name = $wpdb->prefix . 'igadmin';
+					$sql = "SELECT imgurl, igid, link FROM $table_name ORDER BY id DESC LIMIT 6";
+					$res = $wpdb->get_results($sql, OBJECT);
+					$bound = count($res);
+					for ($i=0; $i < $bound ; $i++) {
+						echo "<a href='" . $res[$i]->link . "' target='_blank'><img class='small-6 no-pad' id='". $res[$i]->igid ."' src = '" . $res[$i]->imgurl . "'></img></a>";
+					}
+				?>
+			</div>
 		</section>
 	</div>
 </section>
@@ -311,6 +322,7 @@ var transTimer = setInterval(function(){ trans(1) }, 5000);
 
 arl.addEventListener("click", function(){
 	trans(0);
+	// console.log('<<')
 	clearInterval(transTimer);
 });
 
