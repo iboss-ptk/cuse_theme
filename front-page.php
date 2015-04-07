@@ -15,7 +15,7 @@
 					"posts_per_page" =>10,
 					"post_type" => "announcement",
 					'orderby' => 'title',
-					'order' => 'ASC',
+					'order' => 'DESC',
 					'paged'=>$paged);
 					$wp_query = new WP_Query($args);?>
 				  <?php if ( $wp_query->have_posts() ) : $i = 0;?>

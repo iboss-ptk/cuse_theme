@@ -179,7 +179,7 @@
 
 
     $('.instagram-all').on('didLoadInstagram', function(event, response) {
-        var initUrl = 'https://api.instagram.com/v1/tags/chula/media/recent?client_id=77995f907c4348909e35165138fd2e62';
+        var initUrl = 'https://api.instagram.com/v1/tags/chulase/media/recent?client_id=77995f907c4348909e35165138fd2e62';
         page.push(initUrl);
         paginate(0)
     });
