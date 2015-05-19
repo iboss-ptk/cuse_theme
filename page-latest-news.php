@@ -93,7 +93,7 @@
     <!-- pagination here -->
     <?php
       
-        custom_pagination($wp_query->max_num_pages,2,$paged);
+        custom_pagination($wp_query->max_num_pages,2,$paged, 'page/%#%');
     ?>
 
 <!--<?php echo get_next_posts_link( 'Older Entries', $wp_query->max_num_pages ); ?>

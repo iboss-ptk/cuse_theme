@@ -108,7 +108,7 @@ function find_allowed_callback() {
     wp_die();
 }
 
-function custom_pagination($numpages = '', $pagerange = '', $paged='') {
+function custom_pagination($numpages = '', $pagerange = '', $paged='', $page_format='&paged=%#%') {
 
   if (empty($pagerange)) {
     $pagerange = 2;
@@ -141,7 +141,7 @@ function custom_pagination($numpages = '', $pagerange = '', $paged='') {
    */
   $pagination_args = array(
     'base'            => get_pagenum_link(1) . '%_%',
-    'format'          => '&paged=%#%',
+    'format'          => $page_format,
     'total'           => $numpages,
     'current'         => $paged,
     'show_all'        => False,

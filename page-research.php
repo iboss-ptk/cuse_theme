@@ -72,7 +72,3 @@
               <?php endif; ?>
       </div>
       </section>
-
-      <script type="text/javascript">
-        console.log("hey");
-      </script>
