@@ -278,7 +278,7 @@ $wp_query = new WP_Query( $args );
 			<?php endif; ?>
 			<div class="event-item">
 				<div class="center">
-					<a href="<?php echo "eventss" ?>"><h4><u>View all</u></h4></a>
+					<a href="<?php echo "events" ?>"><h4><u>View all</u></h4></a>
 				</div>
 			</div>
 
