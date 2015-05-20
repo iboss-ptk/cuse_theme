@@ -160,9 +160,8 @@ function custom_pagination($numpages = '', $pagerange = '', $paged='', $page_for
 
   if ($paginate_links) {
     echo '<div class="row">
-    <div class="medium-10 columns"></div>
-    <div class="medium-2 columns">';
-    echo '<ul class="pagination">';
+    ';
+    echo '<div class="pagination-centered"><ul class="pagination">';
       
       // echo paginate_links($pagination_args);
      
@@ -176,8 +175,8 @@ function custom_pagination($numpages = '', $pagerange = '', $paged='', $page_for
             echo "<li class=''>".$page."</li>";
         //if($page!='')echo "<li class=''><a>".$page."</a></li>";
       }
-    echo "</ul>";
-    echo '</div></div>';
+    echo "</ul></div>";
+    echo '</div>';
   }
 
 }
