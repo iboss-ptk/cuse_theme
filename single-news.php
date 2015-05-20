@@ -9,18 +9,68 @@
           ?>
         </header>
         <div class="entry-content">
-          <?php echo get_the_date( 'F j, Y g:i a' ); ?>
-          <?php echo getPostViews(get_the_ID());?>
-          <?php setPostViews(get_the_ID());?>
-          <?php the_content();?>
-           <p>  <?php echo get_the_term_list( $post->ID, 'tags', '<b>tags:</b> ', ', ', '' ); ?></p>
+          
+          <div style="padding-bottom:5em;">
+            <?php the_content();?>
+          </div>
+
+          <div class="row" style="padding-bottom:2em;">
+            <div class="small-12 large-6 columns">
+          <?php 
+          $terms = get_the_terms( $post->ID, 'tags' );
+          $style = 'border: 2px solid #8f131a; padding: 5px 5px; padding-top: 8px;margin-right:0.25em;color:#8f131a;';
+            
+          if($terms!=''){
+            
+            foreach ( $terms as $term ) {
+
+                // The $term is an object, so we don't need to specify the $taxonomy.
+                $term_link = get_term_link( $term );
+               
+                // If there was an error, continue to the next term.
+                if ( is_wp_error( $term_link ) ) {
+                    continue;
+                }
+
+                // We successfully got a link. Print it out.
+                echo '<a style="'.$style.'"href="' . esc_url( $term_link ) . '">' . $term->name . '</a>';
+            }
+          }
+
+          
+          ?>
+
+          </div>
+            <div class="small-12 large-5 columns  right" >
+              <div class="right">
+                <?php echo get_the_date( 'F j, Y g:i a' ); ?>
+<!--           <?php echo getPostViews(get_the_ID());?> -->
+                <?php setPostViews(get_the_ID());?>
+
+              </div>
+            </div>
+            
+        </div>
+            
+
+          
+          
         </div>
         <footer>
           <?php wp_link_pages(array('before' => '<p><strong>'.__('Pages:', 'framework').'</strong> ', 'after' => '</p>', 'next_or_number' => 'number')); ?>
-          <div style="height: 50px"></div>
-          <div style="float: left;"><?php previous_post_link( '%link', '&larr; %title' ); ?></div>
-          <div style="float: right;"><?php next_post_link( '%link', '%title &rarr;' ); ?></div>
+          
         </footer>
+        <hr>
+        <div class="row" style="padding-bottom:5em;">
+            <div class="small-12 large-6 columns">
+              <div class="left"><?php previous_post_link( '%link', '&larr; %title' ); ?></div>
+            </div>
+            <div class="small-12 large-5 columns  right" >
+              <div class="right"><?php next_post_link( '%link', '%title &rarr;' ); ?></div>
+            </div>
+            
+        </div>
+        
 
         <?php comments_template('/templates/comments.php'); ?>
       </article>
