@@ -150,18 +150,33 @@ function custom_pagination($numpages = '', $pagerange = '', $paged='', $page_for
     'prev_next'       => True,
     'prev_text'       => __('&laquo;'),
     'next_text'       => __('&raquo;'),
-    'type'            => 'plain',
+    //'type'            => 'plain',
     'add_args'        => false,
-    'add_fragment'    => ''
+    'add_fragment'    => '',
+    'type'  => 'array'
   );
 
   $paginate_links = paginate_links($pagination_args);
 
   if ($paginate_links) {
-    echo "<nav class='custom-pagination'>";
-      echo "<span class='page-numbers page-num'>Page " . $paged . " of " . $numpages . "</span> ";
-      echo $paginate_links;
-    echo "</nav>";
+    echo '<div class="row">
+    ';
+    echo '<div class="pagination-centered"><ul class="pagination">';
+      
+      // echo paginate_links($pagination_args);
+     
+      foreach ($paginate_links as $page) {
+        # code...
+        //echo  str_replace('span','li',$page);
+        //$page= str_replace('span','li',$page);
+        if (strpos($page, 'current') !== FALSE)
+            echo "<li class='current'><a>".$page."</a></li>";
+        else
+            echo "<li class=''>".$page."</li>";
+        //if($page!='')echo "<li class=''><a>".$page."</a></li>";
+      }
+    echo "</ul></div>";
+    echo '</div>';
   }
 
 }

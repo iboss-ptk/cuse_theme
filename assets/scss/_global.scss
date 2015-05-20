@@ -67,3 +67,36 @@ body {
 	}
 	
 }
+
+
+/** Pagination */
+.pagination {
+    background:#E7E6E5;
+    background:rgba(255,255,255,0.35);
+    padding:7px 10px 5px;
+    -webkit-border-radius:5px;
+    -moz-border-radius:5px;
+    border-radius:5px;
+}
+.pagination .page-numbers {
+    padding:3px 6px;
+    font-size:15px;
+    font-weight:bold;
+}
+.pagination .current {
+    color:#f00;
+}
+
+.pagination .page-numbers current {
+    padding:3px 6px;
+    font-size:15px;
+    font-weight:bold;
+}
+
+ul.pagination li.current a, ul.pagination li span.page-numbers{
+	background: #008CBA;
+  color: #FFF;
+  font-weight: 700;
+  cursor: default;
+
+}
