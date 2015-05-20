@@ -246,16 +246,55 @@ $(function() {
 
 })(jQuery);
 
+var title_queue = []
+var dir = {
+  'up': false,
+  'down': false
+};
+
 $('.tile').on('scrollSpy:enter', function() {
   var id = '.'+$(this).attr('id');
+  if(!title_queue[0]) {
+    title_queue.push(id);
+  }
+  if (dir['up']) {
+    title_queue.unshift(id);
+  } else if(dir['down']) {
+    title_queue.push(id);
+  };
+  
+  id = title_queue[0]
   $('.present').removeClass('present');
   $(id).addClass('present');
+  console.log(title_queue)
 });
 
 $('.tile').on('scrollSpy:exit', function() {
-  // var id = '.'+$(this).attr('id');
-  // $(id).removeClass('present');
-  // presence = false;
+  if (dir['up']) {
+    title_queue.pop();
+  } else if(dir['down']) {
+    title_queue.shift();
+  };
+  
+  var id = title_queue[0]
+  $('.present').removeClass('present');
+  $(id).addClass('present');
+  console.log(title_queue)
 });
 
-$('.tile').scrollSpy({offsetTop: 500});
+$('.tile').scrollSpy({offsetTop: 200});
+
+var lastScrollTop = 0;
+$(document).scroll(function(){
+  var st = $(this).scrollTop();
+   if (st > lastScrollTop){
+      console.log('down');
+      dir['up'] = false;
+      dir['down'] = true;
+   } else {
+      console.log('up');
+      dir['up'] = true;
+      dir['down'] = false;
+   }
+   lastScrollTop = st;
+});
