@@ -259,7 +259,7 @@
     position: relative;
 }
 
-a {
+.post-card a {
   color: $thm-magenta;
   &:hover {
     color: darken($thm-magenta, 30%);
