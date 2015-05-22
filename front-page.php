@@ -226,7 +226,7 @@ $wp_query = new WP_Query( $args );
 	<div class="rows" data-equalizer>
 		<section id="instragram" class="small-12 large-4 columns no-pad" data-equalizer-watch>
 			<div class="no-pad section-title section-title-instragram">
-				<span class="section-title-pad">#ChulaSE on Instragram 
+				<span class="section-title-pad">#ChulaSE on Instagram 
 					<?php if (is_user_logged_in()): ?>(<a href="<?php echo get_page_link(601) ?>">manage</a>)<?php endif ?>
 				</span>
 			</div>
