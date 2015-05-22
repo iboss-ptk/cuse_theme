@@ -108,6 +108,15 @@ function find_allowed_callback() {
     wp_die();
 }
 
+add_filter( 'script_loader_src', 'eliminate_double_slash' );
+add_filter( 'style_loader_src', 'eliminate_double_slash' );
+function eliminate_double_slash( $url ) {
+  $url = str_replace("//", "/", $url);
+  $url = str_replace("http:/", "http://", $url);
+  $url = str_replace("https:/", "https://", $url);
+  return $url;
+}
+
 function custom_pagination($numpages = '', $pagerange = '', $paged='', $page_format='&paged=%#%') {
 
   if (empty($pagerange)) {

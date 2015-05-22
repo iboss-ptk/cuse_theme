@@ -45,6 +45,14 @@
   </div>
   
 <?php endwhile; ?>
+
+
+<div style="border: 1px solid #0e0b08; padding: 20px 20px; margin-top: 50px;">
+<p style="padding-left: 30px; text-align: center;">ผู้ที่ไม่มีผลสอบภาษาอังกฤษ (CU-TEP) ดูรายละเอียดได้จากประกาศ เรื่อง<br>
+การทดสอบความรู้ความสามารถทางภาษาอังกฤษ และสมัครได้ที่ <a title="http://www.atc.chula.ac.th" href="http://www.atc.chula.ac.th" target="_blank">www.atc.chula.ac.th</a><br>
+***ส่งผลการสอบภาษาอังกฤษ ที่ภาควิชาวิศวกรรมคอมพิวเตอร์ อย่างช้าที่สุดภายในวันสอบสัมภาษณ์***<br>
+<em>หมายเหตุ ภาควิชาฯจะไม่รับผลสอบภาษาอังกฤษ ที่ส่งหลังกำหนด และส่งที่อื่นนอกเหนือจากที่ประกาศไว้</em></p>
+</div>
 <?php 
       //echo get_next_posts_link( 'Older Entries', $wp_query->max_num_pages ); 
       //echo get_previous_posts_link( 'Newer Entries' ); 
