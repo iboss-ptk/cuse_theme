@@ -86,22 +86,24 @@
 
 		<?php while ( $wp_query->have_posts() ) : $wp_query->the_post(); // Start the Loop.?>
 
-
-
-		<div class="post-card small-12 large-4 columns no-pad" data-equalizer-watch>
-			<a href=<?php the_permalink() ; ?>></a>
-			<div class='post-card-cover'></div>
-			<div class="seperate">
-				<div class="no-pad img-container">
-					<?php if ( has_post_thumbnail() ) {
-						the_post_thumbnail();
-					} 						
+	<div class="post-card small-12 large-4 columns no-pad" data-equalizer-watch>
+		<a href=<?php the_permalink() ; ?>></a>
+		<div class='post-card-cover'></div>
+		<div class="seperate">
+			<div class="no-pad img-container">
+				<a href=<?php the_permalink() ; ?>>
+				<?php if ( has_post_thumbnail() ) {
+					the_post_thumbnail();} 						
 					?>
+				</a>
 				</div>
-				<div class="post-card-content small-offset-1 small-10">
-					<h4><?php the_title(); ?></h4>
-					<p><?php
-					the_content(__('Read more','avia_framework'));?></p>
+				<div class="post-card-content small-offset-1 small-10" >
+					<a href=<?php the_permalink() ; ?>>
+						<h4><?php the_title(); ?></h4>
+					</a>
+						<p><?php the_content();?></p>
+					
+					<p></p>
 				</div>
 			</div>
 		</div>
@@ -137,21 +139,26 @@ $wp_query = new WP_Query( $args );
 
 
 
-	<div class="post-card small-12 large-4 columns no-pad" data-equalizer-watch>
+		<div class="post-card small-12 large-4 columns no-pad" data-equalizer-watch>
 		<a href=<?php the_permalink() ; ?>></a>
 		<div class='post-card-cover'></div>
 		<div class="seperate">
 			<div class="no-pad img-container">
+				<a href=<?php the_permalink() ; ?>>
 				<?php if ( has_post_thumbnail() ) {
 					the_post_thumbnail();} 						
-					?></div>
-					<div class="post-card-content small-offset-1 small-10">
+					?>
+				</a>
+				</div>
+				<div class="post-card-content small-offset-1 small-10" >
+					<a href=<?php the_permalink() ; ?>>
 						<h4><?php the_title(); ?></h4>
-						<p><?php
-						the_content(__('Read more','avia_framework'));?></p>
-					</div>
+					</a>
+						<p><?php the_content();?></p>
+					
 				</div>
 			</div>
+		</div>
 		<?php endwhile; ?>
 		<?php 
 	// clean up after our query
@@ -188,14 +195,19 @@ $wp_query = new WP_Query( $args );
 		<div class='post-card-cover'></div>
 		<div class="seperate">
 			<div class="no-pad img-container">
+				<a href=<?php the_permalink() ; ?>>
 				<?php if ( has_post_thumbnail() ) {
 					the_post_thumbnail();} 						
 					?>
+				</a>
 				</div>
 				<div class="post-card-content small-offset-1 small-10" >
-					<h4><?php the_title(); ?></h4>
-					<p><?php
-					the_content(__('Read more','avia_framework'));?></p>
+					<a href=<?php the_permalink() ; ?>>
+						<h4><?php the_title(); ?></h4>
+					</a>
+						<p><?php the_content();?></p>
+					
+					<p></p>
 				</div>
 			</div>
 		</div>
