@@ -260,7 +260,10 @@
 }
 
 a {
-  color: $thm-lightgreen;
+  color: $thm-magenta;
+  &:hover {
+    color: darken($thm-magenta, 30%);
+  }
 }
 
 p {
