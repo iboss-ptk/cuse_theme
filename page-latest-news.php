@@ -1,10 +1,11 @@
 <section class="page-content bg-handmouse">
 <div class="small-12 large-10 large-offset-1 paper-like-content-wrapper asplalt">
 
-	<div class="cover-title">
+		<div class="cover-title">
 		<?php get_template_part('templates/page', 'header'); ?>
-		</div>
 
+		</div>
+		
 		<div class="search">
 			<form role="search" method="get" class="search" action="http://cuse.dev/">
 				<div class="row">
