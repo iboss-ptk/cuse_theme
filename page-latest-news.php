@@ -6,7 +6,7 @@
 		</div>
 
 		<div class="search">
-			<form role="search" method="get" class="search" action="http://cuse.dev/">
+			<form role="search" method="get" class="search" action="http://www.cp.eng.chula.ac.th/se/">
 				<div class="row">
 					<div class="small-12 columns">
 						<div class="row collapse">
