@@ -53,6 +53,7 @@
 				<div id="arrow-right" class="arrow"></div>
 			</div>
 		</div>
+		<div id="arrow-down" class="arrow"></div>
 	</div>
 </header>
 
@@ -305,6 +306,14 @@ $wp_query = new WP_Query( $args );
 var arl = document.getElementById("arrow-left");
 var arr = document.getElementById("arrow-right");
 var nowop = document.getElementById("nowop");
+
+var ard = document.getElementById("arrow-down");
+
+ard.addEventListener("click", function(){
+	$('html,body').animate({
+	  scrollTop: $(".section-title-news").offset().top - 100
+	}, 1000);
+});
 
 var announce = document.getElementsByClassName("announce");
 var max = announce.length;
