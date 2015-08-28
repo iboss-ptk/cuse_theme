@@ -4,7 +4,7 @@
     <article <?php post_class(); ?>>
       <header class='news-header'>
         <h1 class="entry-title">
-          <!-- <b>Research:</b> --> <?php the_field('name'); ?>
+          <!-- <b>Research:</b> --> <?php the_field('name_thai'); ?> (<?php the_field('name_eng'); ?>)
         </h1>
         <?php if ( has_post_thumbnail() ) {
           the_post_thumbnail();}
