@@ -1,3 +1,11 @@
+@mixin vendor-prefix($name, $argument) {
+  -webkit-#{$name}: #{$argument};
+  -ms-#{$name}: #{$argument};
+  -moz-#{$name}: #{$argument};
+  -o-#{$name}: #{$argument};
+  #{$name}: #{$argument};
+}
+
 #header {
   background: url('http://www.cp.eng.chula.ac.th/se/app/themes/cuse_theme/assets/img/campus.jpg') no-repeat;
   background-size: cover;
@@ -290,7 +298,7 @@ time.icon span {
 
 #arrow-left {
     left: 1%;
-    transform: rotate(45deg);
+    @include vendor-prefix(transform, rotate(45deg));
     &:hover {
       border-color: $thm-lightgreen;
     }
@@ -298,7 +306,16 @@ time.icon span {
 
 #arrow-right {
     right: 1%;
-    transform: rotate(-135deg);
+    @include vendor-prefix(transform, rotate(-135deg));
+    &:hover {
+      border-color: $thm-lightgreen;
+    }
+}
+
+#arrow-down {
+    left: 49.5%;
+    top: 100%;
+    @include vendor-prefix(transform, rotate(-45deg));
     &:hover {
       border-color: $thm-lightgreen;
     }
@@ -310,7 +327,9 @@ time.icon span {
   .content {
     display: inline-block;
   }
-  .arrow {
+}
+
+.arrow {
     position: absolute;
     border-left:3px solid $thm-white;
     border-bottom:3px solid $thm-white;
@@ -319,7 +338,6 @@ time.icon span {
     height:20px;
     transform: translate(0, -50%);
   }
-}
 
 /* class for after scroll */
 
