@@ -62,7 +62,7 @@
 
 	<div class="small-12 no-pad section-title section-title-news rows">
 
-		<a href="<?php echo get_page_link(66) ?>"><span class="section-title-pad small-1 columns">News</span></a>
+		<a href="<?php echo get_permalink( get_page_by_title( 'News' ) ); ?>"><span class="section-title-pad small-1 columns">News</span></a>
 	</div>	
 
 	<?php
