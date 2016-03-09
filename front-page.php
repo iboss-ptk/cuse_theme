@@ -227,7 +227,10 @@ $wp_query = new WP_Query( $args );
 	<div class="rows" data-equalizer>
 		<section id="instragram" class="small-12 large-4 columns no-pad" data-equalizer-watch>
 			<div class="no-pad section-title section-title-instragram">
-				<span class="section-title-pad">#ChulaSE on Instagram 
+				<a href="https://www.instagram.com/explore/tags/chulase/" style="color:white;">
+					<span class="section-title-pad">#ChulaSE on Instagram </span>
+				</a>
+				<span class="section-title-pad">
 					<?php if (is_user_logged_in()): ?>(<a href="<?php echo get_page_link(601) ?>">manage</a>)<?php endif ?>
 				</span>
 			</div>
@@ -252,7 +255,11 @@ $wp_query = new WP_Query( $args );
 
 	<section id="event" class="small-12 large-8 columns no-pad" data-equalizer-watch>
 		<div class="no-pad section-title section-title-event">
-			<span class="section-title-pad">Upcoming Event</span>
+			<a href="<?php echo "events" ?>">
+				<span class="section-title-pad">
+				Upcoming Event
+				</span>
+			</a>
 		</div>
 		<div class="relative-wrapper">
 			
