@@ -255,7 +255,7 @@ $wp_query = new WP_Query( $args );
 
 	<section id="event" class="small-12 large-8 columns no-pad" data-equalizer-watch>
 		<div class="no-pad section-title section-title-event">
-			<a href="<?php echo "events" ?>">
+			<a href="<?php echo "events" ?>" style="color:white;">
 				<span class="section-title-pad">
 				Upcoming Event
 				</span>
